@@ -18,6 +18,10 @@ public class Bullet : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        Destroy(gameObject);
+        if (!(collision.collider.tag == "bullet"))
+        {
+            Destroy(gameObject);
+        }
+      
     }
 }

@@ -12,22 +12,30 @@ public class Shooting : MonoBehaviour
     [SerializeField]
     private GameObject[] weaponGun;
 
-
+    [SerializeField]
     private Transform startPoint;
+
     private Transform transformRotation;
-    private Weapon weapon;
+    private Weapons weapon;
     private int bullets;
     private int bulletsCharge;
     private float nextFireTime = 0;
     private float nextReload = 0;
     bool reloading;
+    float pointx;
+    float pointy;
+
     void Start()
     {
-        weapon = weaponGun[0].GetComponent<Weapon>();
+        weapon = weaponGun[0].GetComponent<Weapons>();
         bullets = weapon.MaxBullets;
         transformRotation = weaponGun[0].GetComponent<Transform>();
-        startPoint = weaponGun[0].GetComponentInChildren<Transform>();
+        //startPoint = weaponGun[0].GetComponentInChildren<Transform>();
         bulletsCharge = weapon.CapacityCharger;
+
+         pointx = startPoint.rotation.eulerAngles.x;
+         pointy = startPoint.rotation.eulerAngles.y;
+
     }
 
     // Update is called once per frame
@@ -40,16 +48,20 @@ public class Shooting : MonoBehaviour
                 if (Input.GetMouseButton(0) && Time.time >= nextFireTime && !reloading)
                 {
 
-                    GameObject go = Instantiate(bullet);
-                    go.transform.position = startPoint.position;
-                    go.transform.rotation = Quaternion.Euler(transformRotation.rotation.eulerAngles.x + 90, transformRotation.rotation.eulerAngles.y, 0);
+                startPoint.rotation = Quaternion.Euler(pointx, pointy, 0);
+
+                    GameObject go = Instantiate(bullet, startPoint.position, Quaternion.Euler(transformRotation.rotation.eulerAngles.x + 90, transformRotation.rotation.eulerAngles.y, 0));
+              
                     go.GetComponent<Rigidbody>().velocity = startPoint.forward * speed;
                     nextFireTime = Time.time + weapon.ShotSpeed;
                     bulletsCharge--;
-                    //indicar les bales que falten
 
-                }
+                startPoint.rotation = Quaternion.Euler(pointx, pointy, 0);
+
+                //indicar les bales que falten
+
             }
+        }
             else if (bullets != 0)
             {
                 //posar text de recarga

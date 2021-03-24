@@ -12,8 +12,10 @@ GameObject:
   - component: {fileID: 2954033311036083933}
   - component: {fileID: 2954033311036083934}
   - component: {fileID: 2954033311036083935}
+  - component: {fileID: 1833734276558108121}
+  - component: {fileID: 7887218526415779405}
   m_Layer: 9
-  m_Name: Gun2
+  m_Name: Weapon2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -96,6 +98,48 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1833734276558108121
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2954033311036083928}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25d78f90e6db9f047866a101ad360945, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speedH: 2
+  speedV: 2
+--- !u!114 &7887218526415779405
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2954033311036083928}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5cd40477a243f37478f94db1f92ad912, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponName: SegundaArma
+  reloadSpeed: 2
+  capacityCharger: 8
+  shootSpeed: 0.2
+  shootPoint: {fileID: 2954033311300123947}
+  speed: 40
+  bullet: {fileID: 5015922739120436824, guid: d0a0365cf7cd6c142928856ad5bc2431, type: 3}
+  actualbullets: 30
+  maxAngleVariationx: 1
+  maxAngleVariationy: 1
+  textBulletsCharger: {fileID: 0}
+  textTotalBullets: {fileID: 0}
+  textWaponName: {fileID: 0}
+  textReload: {fileID: 0}
+  weaponImage: {fileID: 0}
+  imageWeaponImage: {fileID: 0}
 --- !u!1 &2954033311300123956
 GameObject:
   m_ObjectHideFlags: 0

@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
+
 
 
 [CreateAssetMenu(fileName = "Weapon", menuName = "ScriptableObjects/Weapons", order = 1)]
@@ -17,9 +19,6 @@ public class Weapon : MonoBehaviour
     protected float shootSpeed;
     [SerializeField]
     protected Transform shootPoint;
-
-    [SerializeField]
-    Transform padre;
 
     protected float angleShootDirection;
 
@@ -42,13 +41,15 @@ public class Weapon : MonoBehaviour
     protected float maxAngleVariationy;
 
     [SerializeField]
-    protected Text textBulletsCharger;
+    protected TextMeshProUGUI textBulletsCharger;
     [SerializeField]
-    protected Text textTotalBullets;
+    protected TextMeshProUGUI textTotalBullets;
     [SerializeField]
-    protected Text textWaponName;
+    protected TextMeshProUGUI textWaponName;
+    
     [SerializeField]
-    protected Text textReload;
+    protected TextMeshProUGUI textReload;
+
     [SerializeField]
     protected Sprite weaponImage;
     [SerializeField]

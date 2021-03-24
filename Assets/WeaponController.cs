@@ -28,10 +28,15 @@ public class WeaponController : MonoBehaviour
     {
         if (Input.GetKeyDown("a"))
         {
+
             weponScript = weapons[index].GetComponent<Weapon>();
-            weapons[index].SetActive(false);
-            weaponTransform = weapons[index].GetComponent<Transform>().rotation.eulerAngles;
-            changeWepoan();
+            if (!weponScript.reloading)
+            {
+                weapons[index].SetActive(false);
+                weaponTransform = weapons[index].GetComponent<Transform>().rotation.eulerAngles;
+                changeWepoan();
+            }
+
 
         }
     }

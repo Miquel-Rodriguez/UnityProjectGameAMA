@@ -20,7 +20,7 @@ public class Weapon : MonoBehaviour
 
     protected float angleShootDirection;
 
-    protected bool reloading;
+    public bool reloading;
     protected Transform transformRotation;
     protected int bulletsCharge;
     

@@ -7,7 +7,7 @@ public class SecondWeapon : Weapon
     public void Start()
     {
 
-        shootPoint = gameObject.GetComponentInChildren<Transform>();
+
         transformRotation = gameObject.GetComponent<Transform>();
         bulletsCharge = capacityCharger;
 

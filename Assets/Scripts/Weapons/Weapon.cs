@@ -18,6 +18,9 @@ public class Weapon : MonoBehaviour
     [SerializeField]
     protected Transform shootPoint;
 
+    [SerializeField]
+    Transform padre;
+
     protected float angleShootDirection;
 
     public bool reloading;
@@ -78,14 +81,25 @@ public class Weapon : MonoBehaviour
 
     protected void InstanceShoot()
     {
+       //  shootPoint.GetComponentInParent<Transform>().position = padre.position;
+       //  shootPoint.GetComponentInParent<Transform>().rotation = padre.rotation;
+
+       // shootPoint.GetComponent<Transform>().rotation = padre.rotation;
+
         float variationx= Random.Range(-maxAngleVariationy, maxAngleVariationy);
         float variationy= Random.Range(-maxAngleVariationx, maxAngleVariationx);
-        shootPoint.rotation = Quaternion.Euler(shootPoint.rotation.eulerAngles.x + variationx, shootPoint.rotation.eulerAngles.y + variationy , 0 );
 
-        GameObject go = Instantiate(bullet, shootPoint.position, Quaternion.Euler(transformRotation.rotation.eulerAngles.x + 90, transformRotation.rotation.eulerAngles.y, 0));
+       // shootPoint.rotation = Quaternion.Euler(shootPoint.rotation.eulerAngles.x, shootPoint.rotation.eulerAngles.y, 0 );
+
+        shootPoint.rotation *= Quaternion.Euler(variationx,variationy,1);
+
+        GameObject go = Instantiate(bullet, shootPoint.position, Quaternion.Euler(transformRotation.rotation.eulerAngles.x + 90 +variationx, transformRotation.rotation.eulerAngles.y+variationy, 0));
+
+
 
         go.GetComponent<Rigidbody>().velocity = shootPoint.forward * speed;
         nextFireTime = Time.time + shootSpeed;
+        shootPoint.rotation = Quaternion.Euler(gameObject.transform.rotation.eulerAngles.x, gameObject.transform.rotation.eulerAngles.y, 1);
         //indicar les bales que falten
     }
 

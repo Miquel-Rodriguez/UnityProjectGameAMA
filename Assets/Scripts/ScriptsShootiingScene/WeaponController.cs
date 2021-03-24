@@ -34,6 +34,7 @@ public class WeaponController : MonoBehaviour
             {
                 weapons[index].SetActive(false);
                 weaponTransform = weapons[index].GetComponent<Transform>().rotation.eulerAngles;
+                print("previa"+weapons[index].GetComponent<Transform>().rotation);
                 changeWepoan();
             }
 
@@ -50,14 +51,17 @@ public class WeaponController : MonoBehaviour
         else index = 0;
 
         weponScript = weapons[index].GetComponent<Weapon>();
-        //weponScript.isAvailable = true;
+        weponScript.isAvailable = true;
         if (weponScript.isAvailable)
         {
-            print(weaponTransform.x);
-            weapons[index].SetActive(true);
-            weapons[index].GetComponent<Transform>().rotation = Quaternion.Euler(weaponTransform.x,weaponTransform.y,weaponTransform.z);
-            weapons[index].GetComponent<Transform>().rotation = Quaternion.Euler(30,30,30);
             
+            weapons[index].SetActive(true);
+            //weapons[index].GetComponent<Transform>().rotation = Quaternion.Euler(weaponTransform.x,weaponTransform.y,weaponTransform.z);
+            print(weapons[index].GetComponent<Transform>().rotation.x);
+            //weapons[index].GetComponent<Transform>().rotation = Quaternion.Euler(30,30,30);
+
+            print(weapons[index].GetComponent<Transform>().rotation.x);
+
             weponScript.SetTextAndImages();
         }
         else changeWepoan();

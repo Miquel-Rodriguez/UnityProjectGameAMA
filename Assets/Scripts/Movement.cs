@@ -1,20 +1,35 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Movement : MonoBehaviour
 {
-    public float moveSpeed;
+
+    public List<Text> listaTextos;
+
 
     // Start is called before the first frame update
     void Start()
     {
-        moveSpeed = 10f;
+        foreach(var texto in listaTextos)
+        {
+            texto.gameObject.SetActive(false);
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+
+    public void ShowMessage(string nombre)
     {
-        transform.Translate(moveSpeed * Input.GetAxis("Horizontal") * Time.deltaTime, 0f, moveSpeed * Input.GetAxis("Vertical") * Time.deltaTime);
+        foreach(var texto in listaTextos)
+        {
+            if (!texto.gameObject.activeSelf)
+            {
+                texto.gameObject.SetActive(true);
+                texto.text = "Has obtenido: " + nombre;
+                DisableTexts disable = texto.GetComponent<DisableTexts>();
+                disable.DisableIn(3);
+                break;
+            }
+        }
     }
 }

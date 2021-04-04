@@ -8,11 +8,16 @@ public class Player : MonoBehaviour
     [SerializeField] Transform target;
     float maxSpeed;
     [SerializeField] float giroSpeed;
-    
+    [SerializeField] int maxHealth;
+    private int actualHealth;
+    [SerializeField] UIController uIController;
+    private Transform chechPoint;
+
     void Start()
     {
         transform.LookAt(new Vector3(target.position.x, transform.position.y, target.position.z));
         maxSpeed = speed;
+        actualHealth = maxHealth;
     }
 
     // Update is called once per frame
@@ -45,4 +50,26 @@ public class Player : MonoBehaviour
         }
        
     }
+
+    private void TakeDamage(int damage)
+    {
+        actualHealth -= damage;
+        //camiar barra de vida
+        if (actualHealth<=0)
+        {
+            StartCoroutine(Die());
+        }
+    }
+
+    private IEnumerator Die()
+    {
+        uIController.FadeIn();
+
+        yield return new WaitForSeconds(uIController.fadeTime);
+        gameObject.transform.position = chechPoint.position;
+        actualHealth = maxHealth;
+        uIController.FadeOut();
+    }
+
+
 }

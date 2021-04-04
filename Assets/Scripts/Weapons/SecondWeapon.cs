@@ -28,7 +28,7 @@ public class SecondWeapon : Weapon
 
             }
         }
-        else if (actualbullets != 0)
+        else if (Actualbullets != 0)
         {
             textReload.gameObject.SetActive(true);
         }
@@ -36,12 +36,14 @@ public class SecondWeapon : Weapon
         {
             //posar text on indica que no hi han bales
             print("No hi han bales");
-            print(actualbullets);
+            print(Actualbullets);
         }
 
-        if (Input.GetKeyDown("r") && Time.time >= nextReload && actualbullets != 0)
+        if (Input.GetKeyDown("r") && Time.time >= nextReload && Actualbullets != 0)
         {
             StartCoroutine(Reload());
         }
     }
+
+
 }

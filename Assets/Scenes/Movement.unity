@@ -1240,6 +1240,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   target: {fileID: 484954896}
+  giroSpeed: 0
+  maxHealth: 0
+  uIController: {fileID: 0}
 --- !u!54 &1972358415
 Rigidbody:
   m_ObjectHideFlags: 0

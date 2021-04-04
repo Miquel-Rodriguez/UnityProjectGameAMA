@@ -8,19 +8,22 @@ public class WeaponController : MonoBehaviour
     private GameObject [] weapons;
 
     private List<GameObject> WeaponsPlayerGet;
-    Weapon weponScript;
+    private Weapon weponScript;
     int index=0;
     Vector3 weaponTransform;
+
+    public Weapon WeponScript { get => weponScript; set => weponScript = value; }
+
     public void Start()
     {
-        weponScript = weapons[index].GetComponent<Weapon>();
-        weponScript.isAvailable = true;
+        WeponScript = weapons[index].GetComponent<Weapon>();
+        WeponScript.isAvailable = true;
     }
 
     public void ActiveWeapon(int side)
     {
-        weponScript = weapons[side].GetComponent<Weapon>();
-        weponScript.isAvailable = true;
+        WeponScript = weapons[side].GetComponent<Weapon>();
+        WeponScript.isAvailable = true;
 
     }
 
@@ -29,8 +32,8 @@ public class WeaponController : MonoBehaviour
         if (Input.GetKeyDown("a"))
         {
 
-            weponScript = weapons[index].GetComponent<Weapon>();
-            if (!weponScript.reloading)
+            WeponScript = weapons[index].GetComponent<Weapon>();
+            if (!WeponScript.reloading)
             {
                 weapons[index].SetActive(false);
                 weaponTransform = weapons[index].GetComponent<Transform>().rotation.eulerAngles;
@@ -50,9 +53,9 @@ public class WeaponController : MonoBehaviour
         }
         else index = 0;
 
-        weponScript = weapons[index].GetComponent<Weapon>();
-        weponScript.isAvailable = true;
-        if (weponScript.isAvailable)
+        WeponScript = weapons[index].GetComponent<Weapon>();
+        WeponScript.isAvailable = true;
+        if (WeponScript.isAvailable)
         {
             
             weapons[index].SetActive(true);
@@ -62,7 +65,7 @@ public class WeaponController : MonoBehaviour
 
             print(weapons[index].GetComponent<Transform>().rotation.x);
 
-            weponScript.SetTextAndImages();
+            WeponScript.SetTextAndImages();
         }
         else changeWepoan();
     }

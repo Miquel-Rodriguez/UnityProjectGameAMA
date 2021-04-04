@@ -30,7 +30,7 @@ public class DefautlWeapon : Weapon
 
             }
         }
-        else if (actualbullets != 0)
+        else if (Actualbullets != 0)
         {
             textReload.gameObject.SetActive(true);
         }
@@ -38,10 +38,10 @@ public class DefautlWeapon : Weapon
         {
             //posar text on indica que no hi han bales
             print("No hi han bales");
-            print(actualbullets);
+            print(Actualbullets);
         }
 
-        if (Input.GetKeyDown("r") && Time.time >= nextReload && actualbullets!=0)
+        if (Input.GetKeyDown("r") && Time.time >= nextReload && Actualbullets != 0)
         {
             StartCoroutine(Reload());
         }
@@ -78,10 +78,10 @@ public class DefautlWeapon : Weapon
         while (true)
         {
             print("hola?");
-            if (actualbullets < 12)
+            if (Actualbullets < 12)
             {
-                actualbullets++;
-                textTotalBullets.text = actualbullets.ToString();
+                Actualbullets++;
+                textTotalBullets.text = Actualbullets.ToString();
             }
             yield return new WaitForSeconds(1);
         }

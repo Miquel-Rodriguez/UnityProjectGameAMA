@@ -12,6 +12,7 @@ public class Player : MonoBehaviour
     private int actualHealth;
     [SerializeField] UIController uIController;
     private Transform chechPoint;
+    [SerializeField] WeaponController weaponController;
 
     void Start()
     {
@@ -31,6 +32,13 @@ public class Player : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        if (other.CompareTag("bullets"))
+        {
+            BulletsPack bulletsPackScipt = other.gameObject.GetComponent<BulletsPack>();
+
+            weaponController.GetComponent<Weapon>().Actualbullets += bulletsPackScipt.NumBullets;
+
+        }
         if (other.tag == "Waypoint")
         {
             StartCoroutine(moveAndWait(other));

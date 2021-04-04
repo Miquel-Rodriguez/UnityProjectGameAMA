@@ -33,7 +33,7 @@ public class Weapon : MonoBehaviour
     [SerializeField]
     protected GameObject bullet;
     [SerializeField]
-    protected int actualbullets;
+    private int actualbullets;
 
     [SerializeField]
     protected float maxAngleVariationx;
@@ -55,6 +55,8 @@ public class Weapon : MonoBehaviour
     [SerializeField]
     protected Image imageWeaponImage;
     public bool isAvailable;
+
+    public int Actualbullets { get => actualbullets; set => actualbullets = value; }
 
     public virtual IEnumerator Reload()
     {

@@ -18,5 +18,22 @@ public class StopWaypoint : MonoBehaviour
 
     }
 
-   
+    private void OnTriggerEnter(Collider other)
+    {
+       
+        if (other.tag == "Waypoint")
+        {
+            StartCoroutine(Stop());
+
+        }
+
+    }
+
+    IEnumerator Stop()
+    {
+        player.enabled = false;
+        yield return new WaitForSeconds(3f);
+        player.enabled = true;
+        
+    }
 }

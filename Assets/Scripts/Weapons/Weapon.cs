@@ -103,6 +103,7 @@ public class Weapon : MonoBehaviour
         go.GetComponent<Rigidbody>().velocity = shootPoint.forward * speed;
         nextFireTime = Time.time + shootSpeed;
         shootPoint.rotation = Quaternion.Euler(gameObject.transform.rotation.eulerAngles.x, gameObject.transform.rotation.eulerAngles.y, 1);
+  
         //indicar les bales que falten
     }
 

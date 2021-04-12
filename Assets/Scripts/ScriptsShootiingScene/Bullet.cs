@@ -7,7 +7,7 @@ public class Bullet : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+ 
     }
 
     // Update is called once per frame
@@ -18,10 +18,12 @@ public class Bullet : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (!(collision.collider.tag == "bullet"))
+        if (!(collision.collider.tag == "Bullet"))
         {
             Destroy(gameObject);
         }
       
     }
+
+   
 }

@@ -41,10 +41,11 @@ public class EnemySoldier : MonoBehaviour
 
     bool shooting = false;
 
-    [SerializeField] int life;
+    [SerializeField] int life = 100;
 
     private Vector3 offset = new Vector3(0, 0.9f, 0);
 
+    bool deadth;
 
     private void Start()
     {
@@ -53,35 +54,31 @@ public class EnemySoldier : MonoBehaviour
 
     private void Update()
     {
-        enemyEyes.LookAt(player.position);
-        transform.LookAt(playerContainer.position - offset);
-
-        if (WatchingPlayer() && !shooting)
+        if (!deadth)
         {
-            print("viendo");
-            Shoot();
+            enemyEyes.LookAt(player.position);
+            transform.LookAt(playerContainer.position - offset);
 
-            
+            if (WatchingPlayer() && !shooting)
+            {
+                print("viendo");
+                Shoot();
+            }
+            else if (!WatchingPlayer())
+            {
+                print("no veo nada");
+                animator.SetBool("NormalShooting", false);
+            }
+
+            if (Time.time >= waitToDown && !down)
+            {
+                print("wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww");
+                down = true;
+                StartCoroutine(Down());
+            }
+
+            Debug.DrawRay(enemyEyes.position, enemyEyes.forward * visionRange, Color.red);
         }
-        else if(!WatchingPlayer())
-        {
-            print("no veo nada");
-            animator.SetBool("NormalShooting", false);
-        }
-
-        if (Time.time >= waitToDown && !down)
-        {
-            print("wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww");
-         
-            down = true;
-            StartCoroutine(Down());
-        }
-
-      
-
-
-
-        Debug.DrawRay(enemyEyes.position, enemyEyes.forward * visionRange, Color.red);
     }
 
     private bool WatchingPlayer()
@@ -127,5 +124,38 @@ public class EnemySoldier : MonoBehaviour
         yield return new WaitForSeconds(waiteToShoot);
         shooting = false;
 
+    }
+
+/*
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Bullet"))
+        {
+            life -= 10;
+            print(life + "collision");
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Bullet"))
+        {
+            life -= 10;
+            print(life + "trigger");
+        }
+    }
+*/
+
+    public void Lesslife(int damage)
+    {
+        life -= damage;
+        print(life);
+        if (life <= 0)
+        {
+
+            deadth = true;
+
+            animator.SetBool("Die", true);
+        }
     }
 }

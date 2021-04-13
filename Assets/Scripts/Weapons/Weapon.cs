@@ -55,6 +55,7 @@ public class Weapon : MonoBehaviour
     [SerializeField]
     protected Image imageWeaponImage;
     public bool isAvailable;
+    public ParticleSystem particulaTiro;
 
     public int Actualbullets { get => actualbullets; set => actualbullets = value; }
 
@@ -128,5 +129,9 @@ public class Weapon : MonoBehaviour
            imageWeaponImage.sprite = weaponImage;
     }
 
+    public void disparo()
+    {
+        particulaTiro.Play();
+    }
 
 }

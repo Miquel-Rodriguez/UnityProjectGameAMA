@@ -129,7 +129,6 @@ MonoBehaviour:
   capacityCharger: 8
   shootSpeed: 0.2
   shootPoint: {fileID: 2954033311300123947}
-  padre: {fileID: 0}
   reloading: 0
   speed: 40
   bullet: {fileID: 5015922739120436824, guid: d0a0365cf7cd6c142928856ad5bc2431, type: 3}
@@ -143,6 +142,7 @@ MonoBehaviour:
   weaponImage: {fileID: 0}
   imageWeaponImage: {fileID: 0}
   isAvailable: 0
+  particulaTiro: {fileID: 8748153032453913368, guid: 7ff8f5b94246aad4c91ff9c10e776cbe, type: 3}
 --- !u!1001 &4424042691659945068
 PrefabInstance:
   m_ObjectHideFlags: 0

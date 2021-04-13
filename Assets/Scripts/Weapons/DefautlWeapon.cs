@@ -26,6 +26,7 @@ public class DefautlWeapon : Weapon
             if (Input.GetMouseButtonDown(0) && Time.time >= nextFireTime && !reloading)
             {
                 InstanceShoot();
+                gameObject.GetComponent<Weapon>().disparo();
                 LessBullet();
 
             }

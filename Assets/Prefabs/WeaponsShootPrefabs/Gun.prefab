@@ -159,6 +159,7 @@ MonoBehaviour:
   capacityCharger: 6
   shootSpeed: 0
   shootPoint: {fileID: 4218702736506265762}
+  reloading: 0
   speed: 10
   bullet: {fileID: 5015922739120436824, guid: d0a0365cf7cd6c142928856ad5bc2431, type: 3}
   actualbullets: 9
@@ -170,3 +171,5 @@ MonoBehaviour:
   textReload: {fileID: 0}
   weaponImage: {fileID: 21300000, guid: 3bdaf5901a3fa8c4a8b85351b73f4d24, type: 3}
   imageWeaponImage: {fileID: 0}
+  isAvailable: 0
+  particulaTiro: {fileID: 8748153032453913368, guid: 7ff8f5b94246aad4c91ff9c10e776cbe, type: 3}

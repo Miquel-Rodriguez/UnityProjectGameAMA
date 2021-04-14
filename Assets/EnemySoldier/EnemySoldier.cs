@@ -23,7 +23,8 @@ public class EnemySoldier : MonoBehaviour
     private float waitToDown = 1;
     private float waitToUp;
 
-    Weapon weaponScript;
+    [SerializeField]
+    SoldierWeapon weaponScript;
 
     [SerializeField] int maxTimeShooting;
     [SerializeField] int minTimeShooting;
@@ -47,6 +48,8 @@ public class EnemySoldier : MonoBehaviour
 
     bool deadth;
 
+    bool vengoDeAbajo=false;
+
     private void Start()
     {
         animator = GetComponent<Animator>();
@@ -61,18 +64,15 @@ public class EnemySoldier : MonoBehaviour
 
             if (WatchingPlayer() && !shooting)
             {
-                print("viendo");
                 Shoot();
             }
             else if (!WatchingPlayer())
             {
-                print("no veo nada");
                 animator.SetBool("NormalShooting", false);
             }
 
             if (Time.time >= waitToDown && !down)
             {
-                print("wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww");
                 down = true;
                 StartCoroutine(Down());
             }
@@ -102,6 +102,8 @@ public class EnemySoldier : MonoBehaviour
 
     public IEnumerator Down()
     {
+        vengoDeAbajo = true;
+        weaponScript.disparar = false;
         enemyEyes.position = transform.position+new Vector3(0,1,0);
         animator.SetBool("NormalShooting", false);
         animator.SetBool("Down", true);
@@ -110,41 +112,67 @@ public class EnemySoldier : MonoBehaviour
         waitToDown = Time.time + Random.Range(minTimewaitwaitToDown, maxTimeWaitwaitToDown);
         animator.SetBool("Down", false);
         down = false;
-        print("waite to dawn"+waitToDown);
         enemyEyes.position = transform.position + new Vector3(0, 1.75f, 0);
+       
     }
 
     public IEnumerator Shooting()
     {
         timeShoot = Random.Range(minTimeShooting, maxTimeShooting);
         waiteToShoot = Random.Range(minTimewaitToShoot, maxTimeWaitToShoot);
+
+        if (vengoDeAbajo)
+        {
+            print("eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee");
+            StartCoroutine(activateshot());
+        }
+        else
+        {
+            weaponScript.disparar = true;
+        }
+        
+       
+        print("siaprando? " + weaponScript.disparar);
         print("disparando");
         yield return new WaitForSeconds(timeShoot);
+
+        weaponScript.disparar = false;
         animator.SetBool("NormalShooting", false);
+
+
         yield return new WaitForSeconds(waiteToShoot);
         shooting = false;
 
+        print("diaprando? " + weaponScript.disparar);
     }
 
-/*
-    private void OnCollisionEnter(Collision collision)
+    private IEnumerator activateshot()
     {
-        if (collision.gameObject.CompareTag("Bullet"))
-        {
-            life -= 10;
-            print(life + "collision");
-        }
+        yield return new WaitForSeconds(0.5f);
+        print("ññññññññññññññññññññññññññññññññññññññññññññññññññññññññññññññññññññññññññññññññññññ");
+        weaponScript.disparar = true;
+        vengoDeAbajo = false;
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.CompareTag("Bullet"))
+    /*
+        private void OnCollisionEnter(Collision collision)
         {
-            life -= 10;
-            print(life + "trigger");
+            if (collision.gameObject.CompareTag("Bullet"))
+            {
+                life -= 10;
+                print(life + "collision");
+            }
         }
-    }
-*/
+
+        private void OnTriggerEnter(Collider other)
+        {
+            if (other.gameObject.CompareTag("Bullet"))
+            {
+                life -= 10;
+                print(life + "trigger");
+            }
+        }
+    */
 
     public void Lesslife(int damage)
     {

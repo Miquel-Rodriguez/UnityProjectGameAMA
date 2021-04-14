@@ -56,7 +56,9 @@ public class EnemyWeapon : MonoBehaviour
 
     protected void InstanceShoot()
     {
-        GameObject go = Instantiate(bullet, shootPoint.position, Quaternion.Euler(transformRotation.rotation.eulerAngles.x + 90 , transformRotation.rotation.eulerAngles.y , 0));
+  
+        GameObject go = Instantiate(bullet, shootPoint.position, Quaternion.identity);
+        print("paso por aqí33333333333333333333333333333333333333333333");
         nextFireTime = Time.time + shootSpeed;
     }
 

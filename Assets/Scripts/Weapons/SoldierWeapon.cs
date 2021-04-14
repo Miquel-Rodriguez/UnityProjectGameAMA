@@ -8,10 +8,11 @@ public class SoldierWeapon : EnemyWeapon
     private ParticleSystem particulaTiro;
 
     public bool disparar;
+    public float waitToShoot; 
 
     private void Update()
     {
-        if(disparar && Time.time >= nextFireTime)
+        if(disparar && Time.time >= nextFireTime && Time.time >= waitToShoot)
         {
             Shoot();
         }

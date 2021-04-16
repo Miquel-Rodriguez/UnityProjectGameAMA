@@ -6,6 +6,8 @@ using UnityEngine;
 public class StopWaypoint : MonoBehaviour
 {
     [SerializeField]CinemachineDollyCart player;
+    public EnemySoldier enemy;
+    public MoveGunWithMouse moveCam;
     
     private void Start()
     {
@@ -14,7 +16,11 @@ public class StopWaypoint : MonoBehaviour
     }
     private void Update()
     {
-       
+       if (enemy.deadth)
+        {
+            player.enabled = true;
+            moveCam.enabled = false;
+        }
 
     }
 
@@ -23,17 +29,17 @@ public class StopWaypoint : MonoBehaviour
        
         if (other.tag == "Waypoint")
         {
-            StartCoroutine(Stop());
+            Stop();
 
         }
 
     }
 
-    IEnumerator Stop()
+    private void Stop()
     {
         player.enabled = false;
-        yield return new WaitForSeconds(3f);
-        player.enabled = true;
+        moveCam.enabled = true;
+       
         
     }
 }

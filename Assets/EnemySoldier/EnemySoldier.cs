@@ -46,7 +46,7 @@ public class EnemySoldier : MonoBehaviour
 
     private Vector3 offset = new Vector3(0, 0.9f, 0);
 
-    bool deadth;
+    public bool deadth;
 
     bool vengoDeAbajo=false;
 

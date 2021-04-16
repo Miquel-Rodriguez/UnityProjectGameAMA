@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class StopWaypoint : MonoBehaviour
 {
-    CinemachineDollyCart player;
+    [SerializeField]CinemachineDollyCart player;
     
     private void Start()
     {

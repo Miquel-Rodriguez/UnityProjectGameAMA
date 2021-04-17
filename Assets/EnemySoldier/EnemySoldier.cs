@@ -64,10 +64,9 @@ public class EnemySoldier : MonoBehaviour
 
             if (runing)
             {
-                if (!animator.GetBool("run"))
-                {
+                
                     animator.SetBool("Run", true);
-                }
+                
                 
             }
             else

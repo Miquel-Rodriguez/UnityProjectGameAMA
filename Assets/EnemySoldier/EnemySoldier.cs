@@ -44,7 +44,7 @@ public class EnemySoldier : MonoBehaviour
 
     [SerializeField] int life = 100;
 
-    private Vector3 offset = new Vector3(0, 0.9f, 0);
+    private Vector3 offset = new Vector3(0, 0.5f, 0);
 
     public bool deadth;
 

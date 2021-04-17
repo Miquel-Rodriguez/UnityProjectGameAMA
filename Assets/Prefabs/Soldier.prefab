@@ -781,6 +781,7 @@ MonoBehaviour:
   isAvailable: 0
   particulaTiro: {fileID: 8748153031544002923}
   disparar: 0
+  waitToShoot: 0
 --- !u!1 &9054916152906449753
 GameObject:
   m_ObjectHideFlags: 0
@@ -1231,6 +1232,7 @@ MonoBehaviour:
   minTimewaitToUp: 5
   maxTimeWaitToUp: 5
   life: 100
+  runing: 1
 --- !u!1 &9054916153249383963
 GameObject:
   m_ObjectHideFlags: 0

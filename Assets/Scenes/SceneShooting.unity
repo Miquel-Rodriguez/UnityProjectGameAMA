@@ -135,6 +135,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1359396555}
     - target: {fileID: 9054916152428243453, guid: 5036fca875562844296497fa491797da, type: 3}
+      propertyPath: runing
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9054916152428243453, guid: 5036fca875562844296497fa491797da, type: 3}
       propertyPath: playerContainer
       value: 
       objectReference: {fileID: 1359396555}

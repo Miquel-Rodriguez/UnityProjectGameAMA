@@ -49,6 +49,8 @@ public class EnemySoldier : MonoBehaviour
     bool deadth;
 
     bool vengoDeAbajo=false;
+    [SerializeField]
+    bool  runing;
 
     private void Start()
     {
@@ -59,25 +61,42 @@ public class EnemySoldier : MonoBehaviour
     {
         if (!deadth)
         {
-            enemyEyes.LookAt(player.position);
-            transform.LookAt(playerContainer.position - offset);
 
-            if (WatchingPlayer() && !shooting)
+            if (runing)
             {
-                Shoot();
+                if (!animator.GetBool("run"))
+                {
+                    animator.SetBool("Run", true);
+                }
+                
             }
-            else if (!WatchingPlayer())
+            else
             {
-                animator.SetBool("NormalShooting", false);
+                animator.SetBool("Run", false);
+
+
+                RotateTowards(player, transform);
+                RotateTowards(player, enemyEyes);
+
+                if (WatchingPlayer() && !shooting)
+                {
+                    Shoot();
+                }
+                else if (!WatchingPlayer())
+                {
+                    animator.SetBool("NormalShooting", false);
+                }
+
+                if (Time.time >= waitToDown && !down)
+                {
+                    down = true;
+                    StartCoroutine(Down());
+                }
+
+                Debug.DrawRay(enemyEyes.position, enemyEyes.forward * visionRange, Color.red);
             }
 
-            if (Time.time >= waitToDown && !down)
-            {
-                down = true;
-                StartCoroutine(Down());
-            }
 
-            Debug.DrawRay(enemyEyes.position, enemyEyes.forward * visionRange, Color.red);
         }
     }
 
@@ -154,25 +173,6 @@ public class EnemySoldier : MonoBehaviour
         vengoDeAbajo = false;
     }
 
-    /*
-        private void OnCollisionEnter(Collision collision)
-        {
-            if (collision.gameObject.CompareTag("Bullet"))
-            {
-                life -= 10;
-                print(life + "collision");
-            }
-        }
-
-        private void OnTriggerEnter(Collider other)
-        {
-            if (other.gameObject.CompareTag("Bullet"))
-            {
-                life -= 10;
-                print(life + "trigger");
-            }
-        }
-    */
 
     public void Lesslife(int damage)
     {
@@ -185,5 +185,14 @@ public class EnemySoldier : MonoBehaviour
 
             animator.SetBool("Die", true);
         }
+    }
+
+    public static void RotateTowards(Transform player, Transform npc, float speed = 2.0f)
+    {
+
+        Vector3 direction = (player.position - npc.position).normalized;
+        Quaternion lookRotation = Quaternion.LookRotation(direction);
+        npc.rotation = Quaternion.Slerp(npc.rotation, lookRotation, Time.deltaTime * speed);
+
     }
 }

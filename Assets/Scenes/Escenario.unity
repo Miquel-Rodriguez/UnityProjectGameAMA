@@ -9162,7 +9162,7 @@ GameObject:
   - component: {fileID: 947558297}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15877,6 +15877,14 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 947558295}
+    - target: {fileID: 9054916152428243453, guid: 5036fca875562844296497fa491797da, type: 3}
+      propertyPath: runing
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9054916152428243453, guid: 5036fca875562844296497fa491797da, type: 3}
+      propertyPath: visionRange
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 9054916152428243453, guid: 5036fca875562844296497fa491797da, type: 3}
       propertyPath: playerContainer
       value: 

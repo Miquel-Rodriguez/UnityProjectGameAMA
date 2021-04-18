@@ -6,6 +6,7 @@ public class AtractorScript : MonoBehaviour
     public float AttractorSpeed;
 
     private GameObject player;
+    [SerializeField]
     public Transform target;
 
 
@@ -17,15 +18,19 @@ public class AtractorScript : MonoBehaviour
 
     private void Update()
     {
-        transform.position = Vector3.MoveTowards(transform.position, target.transform.position, AttractorSpeed * Time.deltaTime);
+        transform.position = Vector3.MoveTowards(transform.position, player.transform.position, AttractorSpeed * Time.deltaTime);
     }
 
-    void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collision collision)
     {
-        if (other.gameObject.tag == "Player")
+        if (collision.gameObject.CompareTag("Player"))
         {
-            Movement movement = other.gameObject.GetComponent<Movement>();
+            Destroy(gameObject);
+            print("entrnado loot");
+            Movement movement = collision.gameObject.GetComponent<Movement>();
             movement.ShowMessage(gameObject.name);
+            Destroy(gameObject);
+
         }
     }
 }

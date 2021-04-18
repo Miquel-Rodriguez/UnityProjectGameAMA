@@ -94,7 +94,10 @@ public class EnemySoldier : MonoBehaviour
 
                 Debug.DrawRay(enemyEyes.position, enemyEyes.forward * visionRange, Color.red);
             }
-
+        }
+        else
+        {
+            Lesslife(100);
 
         }
     }
@@ -167,7 +170,6 @@ public class EnemySoldier : MonoBehaviour
     private IEnumerator activateshot()
     {
         yield return new WaitForSeconds(0.5f);
-        print("ññññññññññññññññññññññññññññññññññññññññññññññññññññññññññññññññññññññññññññññññññññ");
         weaponScript.disparar = true;
         vengoDeAbajo = false;
     }
@@ -176,13 +178,14 @@ public class EnemySoldier : MonoBehaviour
     public void Lesslife(int damage)
     {
         life -= damage;
-        print(life);
         if (life <= 0)
         {
-
+            weaponScript.disparar = false;
+            StopAllCoroutines();
             deadth = true;
-
             animator.SetBool("Die", true);
+            InstantiateLoot ins = GetComponent<InstantiateLoot>();
+            ins.InsantieteLoots();
         }
     }
 

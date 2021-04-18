@@ -26,8 +26,21 @@ public class AtractorScript : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             Destroy(gameObject);
-            print("entrnado loot");
+            print("entrnado loot collision");
             Movement movement = collision.gameObject.GetComponent<Movement>();
+            movement.ShowMessage(gameObject.name);
+            Destroy(gameObject);
+
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            Destroy(gameObject);
+            print("entrnado loot TRugger");
+            Movement movement = other.gameObject.GetComponent<Movement>();
             movement.ShowMessage(gameObject.name);
             Destroy(gameObject);
 

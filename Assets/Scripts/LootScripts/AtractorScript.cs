@@ -33,7 +33,7 @@ public class AtractorScript : MonoBehaviour
 
         }
     }
-
+    /*
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
@@ -45,6 +45,6 @@ public class AtractorScript : MonoBehaviour
             Destroy(gameObject);
 
         }
-    }
+    }*/
 }
 

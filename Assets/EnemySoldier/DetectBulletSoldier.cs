@@ -13,7 +13,6 @@ public class DetectBulletSoldier : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        print("Entrado");
         if (collision.gameObject.CompareTag("Bullet"))
         {
            enemySoldierScript.Lesslife(damage);

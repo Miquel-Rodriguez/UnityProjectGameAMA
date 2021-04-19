@@ -94,7 +94,10 @@ public class EnemySoldier : MonoBehaviour
 
                 Debug.DrawRay(enemyEyes.position, enemyEyes.forward * visionRange, Color.red);
             }
-
+        }
+        else
+        {
+            Lesslife(100);
 
         }
     }
@@ -141,7 +144,6 @@ public class EnemySoldier : MonoBehaviour
 
         if (vengoDeAbajo)
         {
-            print("eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee");
             StartCoroutine(activateshot());
         }
         else
@@ -150,8 +152,6 @@ public class EnemySoldier : MonoBehaviour
         }
         
        
-        print("siaprando? " + weaponScript.disparar);
-        print("disparando");
         yield return new WaitForSeconds(timeShoot);
 
         weaponScript.disparar = false;
@@ -160,14 +160,11 @@ public class EnemySoldier : MonoBehaviour
 
         yield return new WaitForSeconds(waiteToShoot);
         shooting = false;
-
-        print("diaprando? " + weaponScript.disparar);
     }
 
     private IEnumerator activateshot()
     {
         yield return new WaitForSeconds(0.5f);
-        print("ññññññññññññññññññññññññññññññññññññññññññññññññññññññññññññññññññññññññññññññññññññ");
         weaponScript.disparar = true;
         vengoDeAbajo = false;
     }
@@ -176,13 +173,14 @@ public class EnemySoldier : MonoBehaviour
     public void Lesslife(int damage)
     {
         life -= damage;
-        print(life);
         if (life <= 0)
         {
-
+            weaponScript.disparar = false;
+            StopAllCoroutines();
             deadth = true;
-
             animator.SetBool("Die", true);
+            InstantiateLoot ins = GetComponent<InstantiateLoot>();
+            ins.InsantieteLoots();
         }
     }
 

@@ -144,7 +144,6 @@ public class EnemySoldier : MonoBehaviour
 
         if (vengoDeAbajo)
         {
-            print("eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee");
             StartCoroutine(activateshot());
         }
         else
@@ -153,8 +152,6 @@ public class EnemySoldier : MonoBehaviour
         }
         
        
-        print("siaprando? " + weaponScript.disparar);
-        print("disparando");
         yield return new WaitForSeconds(timeShoot);
 
         weaponScript.disparar = false;
@@ -163,8 +160,6 @@ public class EnemySoldier : MonoBehaviour
 
         yield return new WaitForSeconds(waiteToShoot);
         shooting = false;
-
-        print("diaprando? " + weaponScript.disparar);
     }
 
     private IEnumerator activateshot()

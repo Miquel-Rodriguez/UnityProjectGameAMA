@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8996774890487187391}
   - component: {fileID: 9089392694791669114}
   - component: {fileID: 4829897122751640095}
+  - component: {fileID: -6827435565045023936}
   m_Layer: 0
   m_Name: BoxAmmoMini
   m_TagString: Untagged
@@ -63,6 +64,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AttractorSpeed: 5
   target: {fileID: 0}
+--- !u!114 &-6827435565045023936
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2044120738187761020}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09477ba5bee395f4e9e7d99a29b5313a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lootName: Gun Ammo
 --- !u!1001 &1417517510082977076
 PrefabInstance:
   m_ObjectHideFlags: 0

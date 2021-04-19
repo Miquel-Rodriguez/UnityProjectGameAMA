@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7910435900018770435}
   - component: {fileID: 2261536590964405928}
   - component: {fileID: 323557852434921602}
+  - component: {fileID: -4790905187379707665}
   m_Layer: 0
   m_Name: Botiquin
   m_TagString: Untagged
@@ -110,3 +111,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AttractorSpeed: 5
   target: {fileID: 0}
+--- !u!114 &-4790905187379707665
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8558950328990589910}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09477ba5bee395f4e9e7d99a29b5313a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lootName: Medical kit

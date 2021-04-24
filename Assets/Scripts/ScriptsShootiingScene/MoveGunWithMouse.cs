@@ -13,7 +13,7 @@ public class MoveGunWithMouse : MonoBehaviour
         
     }
 
-    // Update is called once per frame
+
     void Update()
     {
         yaw += speedH * Input.GetAxis("Mouse X");

@@ -11,32 +11,48 @@ public class Scene2Controller : MonoBehaviour
     private float alpha = 0;
     private float fadeTime = 0.5f;
     private bool estadoStopMenu = true;
+    private bool estadoHowPlay = true;
 
     private GameObject panel;
+    private GameObject panelHow;
     [SerializeField] MoveGunWithMouse cameraMove;
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) && estadoHowPlay)
+        {
+            CambiarEstadoHoyToPlay();
+        }
+        else if(Input.GetKeyDown(KeyCode.Escape))
         {
             CambiarEstadoStopMenu();
         }
     }
   
-
+    public void CambiarEstadoHoyToPlay()
+    {
+        estadoHowPlay = !estadoHowPlay;
+        panelHow.SetActive(estadoHowPlay);
+    }
 
 
     private void Start()
     {
         panel = GameObject.Find("StopPlay").gameObject;
+        panelHow = GameObject.Find("HowPlayPanel").gameObject;
         CambiarEstadoStopMenu();
+        CambiarEstadoHoyToPlay();
         StartCoroutine(GrowDawn());
     }
 
     public void CambiarEstadoStopMenu()
     {
         estadoStopMenu = !estadoStopMenu;
-        cameraMove.enabled = !estadoStopMenu;
+        if (cameraMove != null)
+        {
+            cameraMove.enabled = !estadoStopMenu;
+
+        }
         panel.SetActive(estadoStopMenu);
         if (estadoStopMenu)
         {
@@ -53,6 +69,7 @@ public class Scene2Controller : MonoBehaviour
 
     public void SceneSwitcher(int numScene)
     {
+        Time.timeScale = 1f;
         StartCoroutine(Switch(numScene));
     }
 

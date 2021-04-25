@@ -7,6 +7,11 @@ TagManager:
   - Waypoint
   - Gun
   - Bullet
+  - Light
+  - WaypointBoss
+  - ExitToBoss
+  - ExitToRoom
+  - End
   layers:
   - Default
   - TransparentFX

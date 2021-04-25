@@ -58,7 +58,6 @@ public class EnemyWeapon : MonoBehaviour
     {
   
         GameObject go = Instantiate(bullet, shootPoint.position, Quaternion.identity);
-        print("paso por aqí33333333333333333333333333333333333333333333");
         nextFireTime = Time.time + shootSpeed;
     }
 

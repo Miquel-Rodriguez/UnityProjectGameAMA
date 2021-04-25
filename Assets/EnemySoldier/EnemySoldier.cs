@@ -44,11 +44,13 @@ public class EnemySoldier : MonoBehaviour
 
     [SerializeField] int life = 100;
 
-    private Vector3 offset = new Vector3(0, 0.9f, 0);
+    private Vector3 offset = new Vector3(0, 0.5f, 0);
 
     public bool deadth;
 
     bool vengoDeAbajo=false;
+    [SerializeField]
+    bool  runing;
 
     private void Start()
     {
@@ -59,25 +61,44 @@ public class EnemySoldier : MonoBehaviour
     {
         if (!deadth)
         {
-            enemyEyes.LookAt(player.position);
-            transform.LookAt(playerContainer.position - offset);
 
-            if (WatchingPlayer() && !shooting)
+            if (runing)
             {
-                Shoot();
+                
+                    animator.SetBool("Run", true);
+                
+                
             }
-            else if (!WatchingPlayer())
+            else
             {
-                animator.SetBool("NormalShooting", false);
-            }
+                animator.SetBool("Run", false);
 
-            if (Time.time >= waitToDown && !down)
-            {
-                down = true;
-                StartCoroutine(Down());
-            }
 
-            Debug.DrawRay(enemyEyes.position, enemyEyes.forward * visionRange, Color.red);
+                RotateTowards(player, transform);
+                RotateTowards(player, enemyEyes);
+
+                if (WatchingPlayer() && !shooting)
+                {
+                    Shoot();
+                }
+                else if (!WatchingPlayer())
+                {
+                    animator.SetBool("NormalShooting", false);
+                }
+
+                if (Time.time >= waitToDown && !down)
+                {
+                    down = true;
+                    StartCoroutine(Down());
+                }
+
+                Debug.DrawRay(enemyEyes.position, enemyEyes.forward * visionRange, Color.red);
+            }
+        }
+        else
+        {
+            Lesslife(100);
+
         }
     }
 
@@ -123,7 +144,6 @@ public class EnemySoldier : MonoBehaviour
 
         if (vengoDeAbajo)
         {
-            print("eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee");
             StartCoroutine(activateshot());
         }
         else
@@ -132,8 +152,6 @@ public class EnemySoldier : MonoBehaviour
         }
         
        
-        print("siaprando? " + weaponScript.disparar);
-        print("disparando");
         yield return new WaitForSeconds(timeShoot);
 
         weaponScript.disparar = false;
@@ -142,48 +160,36 @@ public class EnemySoldier : MonoBehaviour
 
         yield return new WaitForSeconds(waiteToShoot);
         shooting = false;
-
-        print("diaprando? " + weaponScript.disparar);
     }
 
     private IEnumerator activateshot()
     {
         yield return new WaitForSeconds(0.5f);
-        print("ññññññññññññññññññññññññññññññññññññññññññññññññññññññññññññññññññññññññññññññññññññ");
         weaponScript.disparar = true;
         vengoDeAbajo = false;
     }
 
-    /*
-        private void OnCollisionEnter(Collision collision)
-        {
-            if (collision.gameObject.CompareTag("Bullet"))
-            {
-                life -= 10;
-                print(life + "collision");
-            }
-        }
-
-        private void OnTriggerEnter(Collider other)
-        {
-            if (other.gameObject.CompareTag("Bullet"))
-            {
-                life -= 10;
-                print(life + "trigger");
-            }
-        }
-    */
 
     public void Lesslife(int damage)
     {
         life -= damage;
-        print(life);
         if (life <= 0)
         {
-
+            weaponScript.disparar = false;
+            StopAllCoroutines();
             deadth = true;
-
             animator.SetBool("Die", true);
+            InstantiateLoot ins = GetComponent<InstantiateLoot>();
+            ins.InsantieteLoots();
         }
+    }
+
+    public static void RotateTowards(Transform player, Transform npc, float speed = 2.0f)
+    {
+
+        Vector3 direction = (player.position - npc.position).normalized;
+        Quaternion lookRotation = Quaternion.LookRotation(direction);
+        npc.rotation = Quaternion.Slerp(npc.rotation, lookRotation, Time.deltaTime * speed);
+
     }
 }

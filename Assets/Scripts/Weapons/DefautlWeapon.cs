@@ -14,7 +14,6 @@ public class DefautlWeapon : Weapon
         
         SetTextAndImages();
 
-        print("me he iniciado");
         StartCoroutine(AddOneBullet());
     }
 
@@ -78,7 +77,6 @@ public class DefautlWeapon : Weapon
     {
         while (true)
         {
-            print("hola?");
             if (Actualbullets < 12)
             {
                 Actualbullets++;

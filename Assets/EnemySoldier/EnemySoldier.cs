@@ -175,7 +175,9 @@ public class EnemySoldier : MonoBehaviour
         life -= damage;
         if (life <= 0)
         {
+
             FindObjectOfType<AudioManager>().Play("MuerteEnemigo");
+
             weaponScript.disparar = false;
             StopAllCoroutines();
             deadth = true;

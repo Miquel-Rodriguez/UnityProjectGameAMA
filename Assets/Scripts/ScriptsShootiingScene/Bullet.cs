@@ -20,7 +20,6 @@ public class Bullet : MonoBehaviour
     {
         if (!(collision.collider.CompareTag("Bullet")))
         {
-            print("entrando");
             Destroy(gameObject);
         }
       

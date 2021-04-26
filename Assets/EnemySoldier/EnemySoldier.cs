@@ -173,6 +173,7 @@ public class EnemySoldier : MonoBehaviour
     public void Lesslife(int damage)
     {
         life -= damage;
+        print("Le he dado a un enemigo");
         if (life <= 0)
         {
             weaponScript.disparar = false;

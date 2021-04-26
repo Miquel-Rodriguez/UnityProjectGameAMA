@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour
     private bool dead;
     private bool unavez = true;
     private Vector3 vector1;
+    [SerializeField] private float medidaAgacharse = 0.7f;
 
     void Start()
     {
@@ -36,9 +37,9 @@ public class PlayerController : MonoBehaviour
                 }
                 else
                 {
-                    if (!transform.position.y.Equals(vector1.y - 1))
+                    if (!transform.position.y.Equals(vector1.y - medidaAgacharse))
                     {
-                        Vector3 v= new Vector3(vector1.x, vector1.y-1, vector1.z);
+                        Vector3 v= new Vector3(vector1.x, vector1.y- medidaAgacharse, vector1.z);
                         transform.position = Vector3.MoveTowards(transform.position,v , 2* Time.deltaTime);
     
                     }
@@ -49,7 +50,7 @@ public class PlayerController : MonoBehaviour
             else if(!unavez)
             {
 
-                if (!transform.position.y.Equals(vector1.y + 1))
+                if (!transform.position.y.Equals(vector1.y + medidaAgacharse))
                 {
                     transform.position = Vector3.MoveTowards(transform.position, vector1, 2 * Time.deltaTime);
                 }
@@ -69,7 +70,11 @@ public class PlayerController : MonoBehaviour
             if (collision.gameObject.CompareTag("Bullet"))
             {
                 Destroy(collision.gameObject);
-                LessLife(1);
+                if (!Input.GetKey("space"))
+                {
+                    LessLife(1);
+                }
+                    
 
             }
         }
@@ -87,7 +92,6 @@ public class PlayerController : MonoBehaviour
             StartCoroutine(scene2Controller.ShowDeadGUI());
             print("muerto");
         }
-        print(actualLife);
     }
 
     private IEnumerator CambiarDeEscena()

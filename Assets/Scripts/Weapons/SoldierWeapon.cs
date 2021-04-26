@@ -20,10 +20,8 @@ public class SoldierWeapon : EnemyWeapon
 
     public void Shoot()
     {
-        print("preparo");
         if(Random.Range(1,4) == 1)
         {
-            print("disparo");
             InstanceShoot();
         }
 

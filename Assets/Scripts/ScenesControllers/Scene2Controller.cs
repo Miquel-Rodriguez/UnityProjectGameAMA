@@ -15,6 +15,7 @@ public class Scene2Controller : MonoBehaviour
 
     private GameObject panel;
     private GameObject panelHow;
+    private GameObject panelDead;
     [SerializeField] MoveGunWithMouse cameraMove;
 
     private void Update()
@@ -40,8 +41,10 @@ public class Scene2Controller : MonoBehaviour
     {
         panel = GameObject.Find("StopPlay").gameObject;
         panelHow = GameObject.Find("HowPlayPanel").gameObject;
+        panelDead = GameObject.Find("DeadGUI").gameObject;
         CambiarEstadoStopMenu();
         CambiarEstadoHoyToPlay();
+        panelDead.SetActive(false);
         StartCoroutine(GrowDawn());
     }
 
@@ -108,13 +111,13 @@ public class Scene2Controller : MonoBehaviour
         }
     }
 
-    private void FadeIn()
+    public void FadeIn()
     {
         start = true;
         isFadeIn = true;
     }
 
-    private void FadeOut()
+    public void FadeOut()
     {
         isFadeIn = false;
     }
@@ -126,6 +129,15 @@ public class Scene2Controller : MonoBehaviour
         yield return new WaitForSeconds(fadeTime);
         fadeTime = 0.5f;
         FadeOut();
+    }
+
+    public IEnumerator ShowDeadGUI()
+    {
+        FadeIn();
+        yield return new WaitForSeconds(1f);
+        panelDead.SetActive(true);
+        FadeOut();
+        ///Desactivar TODO
     }
 }
 

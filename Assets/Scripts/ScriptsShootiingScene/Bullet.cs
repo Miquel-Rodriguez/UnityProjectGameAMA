@@ -25,5 +25,14 @@ public class Bullet : MonoBehaviour
       
     }
 
-   
+    private void OnCollisionStay(Collision collision)
+    {
+        if (!(collision.collider.CompareTag("Bullet")))
+        {
+            print("entrando2");
+            Destroy(gameObject);
+        }
+    }
+
+
 }

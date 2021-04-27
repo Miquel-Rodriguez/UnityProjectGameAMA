@@ -2,16 +2,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class StopWaypoint : MonoBehaviour
 {
     [SerializeField]CinemachineDollyCart player;
     public EnemySoldier enemy;
     public MoveGunWithMouse moveCam;
+    public GameObject[] gameObjectArray;
+    public GameObject playerLight;
     
     private void Start()
     {
-        
+        GameObject[] gameObjectArray = GameObject.FindGameObjectsWithTag("Light");
 
     }
     private void Update()
@@ -33,6 +36,36 @@ public class StopWaypoint : MonoBehaviour
 
         }
 
+        if (other.tag == "WaypointBoss")
+        {
+            Stop();
+            playerLight.SetActive(false);
+           
+
+            foreach (GameObject go in gameObjectArray)
+            {
+                go.SetActive(true);
+            }
+        }
+
+        if (other.tag == "ExitToBoss")
+        {
+            Stop();
+
+        }
+
+        if (other.tag == "ExitToRoom")
+        {
+            ChangeSceneToRoom();
+
+        }
+
+        if (other.tag == "End")
+        {
+            End();
+
+        }
+
     }
 
     private void Stop()
@@ -41,5 +74,22 @@ public class StopWaypoint : MonoBehaviour
         moveCam.enabled = true;
        
         
+    }
+
+    private void ChangeSceneToBoss()
+    {
+        //TODO fade out/in
+        SceneManager.LoadScene("BossScene");
+    }
+
+    private void ChangeSceneToRoom()
+    {
+        //TODO fade out/in
+        SceneManager.LoadScene("RoomScene");
+    }
+
+    private void End()
+    {
+        //TODO mensaje de end y fade out
     }
 }

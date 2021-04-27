@@ -176,6 +176,9 @@ public class EnemySoldier : MonoBehaviour
         print("Le he dado a un enemigo");
         if (life <= 0)
         {
+
+            FindObjectOfType<AudioManager>().Play("MuerteEnemigo");
+
             weaponScript.disparar = false;
             StopAllCoroutines();
             deadth = true;

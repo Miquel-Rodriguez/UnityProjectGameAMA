@@ -58,6 +58,7 @@ public class EnemyWeapon : MonoBehaviour
     {
   
         GameObject go = Instantiate(bullet, shootPoint.position, Quaternion.identity);
+        FindObjectOfType<AudioManager>().Play("DisparoEnemigo");
         nextFireTime = Time.time + shootSpeed;
     }
 

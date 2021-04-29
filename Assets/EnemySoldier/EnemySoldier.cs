@@ -15,6 +15,7 @@ public class EnemySoldier : MonoBehaviour
 
     [SerializeField]
     Transform playerContainer;
+    [SerializeField] GameObject blood;
 
     RaycastHit hit;
 
@@ -178,6 +179,7 @@ public class EnemySoldier : MonoBehaviour
     public void Lesslife(int damage)
     {
         life -= damage;
+        StartCoroutine(bloodOn());
         print("Le he dado a un enemigo");
         if (life <= 0)
         {
@@ -199,6 +201,15 @@ public class EnemySoldier : MonoBehaviour
         Vector3 direction = (player.position - npc.position).normalized;
         Quaternion lookRotation = Quaternion.LookRotation(direction);
         npc.rotation = Quaternion.Slerp(npc.rotation, lookRotation, Time.deltaTime * speed);
+
+    }
+
+    public IEnumerator bloodOn()
+    {
+        blood.SetActive(true);
+        yield return new WaitForSeconds(0.25f);
+        blood.SetActive(false);
+
 
     }
 

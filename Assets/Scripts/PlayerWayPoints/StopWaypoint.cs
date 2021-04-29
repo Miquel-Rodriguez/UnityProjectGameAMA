@@ -9,12 +9,12 @@ public class StopWaypoint : MonoBehaviour
     [SerializeField]CinemachineDollyCart player;
     public EnemySoldier enemy;
     public MoveGunWithMouse moveCam;
-    public GameObject[] gameObjectArray;
+    public GameObject[] lights;
     public GameObject playerLight;
     
     private void Start()
     {
-        GameObject[] gameObjectArray = GameObject.FindGameObjectsWithTag("Light");
+        lights = GameObject.FindGameObjectsWithTag("Light");
 
     }
     private void Update()
@@ -42,7 +42,7 @@ public class StopWaypoint : MonoBehaviour
             playerLight.SetActive(false);
            
 
-            foreach (GameObject go in gameObjectArray)
+            foreach (GameObject go in lights)
             {
                 go.SetActive(true);
             }
@@ -50,7 +50,7 @@ public class StopWaypoint : MonoBehaviour
 
         if (other.tag == "ExitToBoss")
         {
-            Stop();
+            ChangeSceneToBoss();
 
         }
 

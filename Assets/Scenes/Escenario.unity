@@ -1157,6 +1157,50 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: e554b1ced7e574e68b01a47c95fa9ad9, type: 3}
   m_PrefabInstance: {fileID: 133133315}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &146739033
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 146739035}
+  - component: {fileID: 146739034}
+  m_Layer: 0
+  m_Name: End
+  m_TagString: ExitToRoom
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!65 &146739034
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 146739033}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!4 &146739035
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 146739033}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 5.65, y: -0.37, z: -7.29}
+  m_LocalScale: {x: 5, y: 2, z: 0.0001}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &147449001
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12749,6 +12793,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1379880539}
   - component: {fileID: 1379880538}
+  - component: {fileID: 1379880540}
   m_Layer: 0
   m_Name: Stop
   m_TagString: Waypoint
@@ -12783,6 +12828,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1379880540
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1379880537}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9eb0f769bb624cd42a4286b9616ab4fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  numEnemies: 1
 --- !u!1001 &1381321836
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17649,7 +17707,7 @@ PrefabInstance:
     - target: {fileID: 9054916152428243453, guid: 5036fca875562844296497fa491797da, type: 3}
       propertyPath: playerContainer
       value: 
-      objectReference: {fileID: 947558298}
+      objectReference: {fileID: 516063154}
     - target: {fileID: 9054916152460716223, guid: 5036fca875562844296497fa491797da, type: 3}
       propertyPath: m_TagString
       value: Untagged

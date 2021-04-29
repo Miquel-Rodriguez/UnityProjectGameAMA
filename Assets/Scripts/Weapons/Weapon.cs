@@ -114,7 +114,7 @@ public class Weapon : MonoBehaviour
         textBulletsCharger.text = bulletsCharge.ToString();
     }
 
-    protected void AddBullets(int bulletsToAdd)
+    public void AddBullets(int bulletsToAdd)
     {
         actualbullets += bulletsToAdd;
         textTotalBullets.text = actualbullets.ToString();

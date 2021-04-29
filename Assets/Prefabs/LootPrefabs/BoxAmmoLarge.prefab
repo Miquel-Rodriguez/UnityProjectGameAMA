@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 2525162276922006422}
   - component: {fileID: 8765049157264401742}
   - component: {fileID: -701546339577712745}
+  - component: {fileID: -4655062570954768596}
   m_Layer: 0
   m_Name: BoxAmmoLarge
-  m_TagString: Untagged
+  m_TagString: BigAmmo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -77,6 +78,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lootName: Rifle ammo
+--- !u!114 &-4655062570954768596
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7134124785335431999}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad94bac10a9b27a41aa788cffa6e1275, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  numQuantityLoot: 4
 --- !u!1001 &2656012657181681435
 PrefabInstance:
   m_ObjectHideFlags: 0

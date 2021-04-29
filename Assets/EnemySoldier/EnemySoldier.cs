@@ -52,15 +52,20 @@ public class EnemySoldier : MonoBehaviour
     [SerializeField]
     bool  runing;
 
+    public bool flashed;
+
     private void Start()
     {
         animator = GetComponent<Animator>();
+        animator.SetBool("Down", true);
+    //    animator.speed = 2;
     }
-
+    
     private void Update()
     {
         if (!deadth)
         {
+            print(flashed);
 
             if (runing)
             {
@@ -77,7 +82,7 @@ public class EnemySoldier : MonoBehaviour
                 RotateTowards(player, transform);
                 RotateTowards(player, enemyEyes);
 
-                if (WatchingPlayer() && !shooting)
+                if (WatchingPlayer() && !shooting && !flashed)
                 {
                     Shoot();
                 }
@@ -195,5 +200,18 @@ public class EnemySoldier : MonoBehaviour
         Quaternion lookRotation = Quaternion.LookRotation(direction);
         npc.rotation = Quaternion.Slerp(npc.rotation, lookRotation, Time.deltaTime * speed);
 
+    }
+
+    public void Flashed()
+    {
+        weaponScript.flashed = true;
+        StartCoroutine(Desflashear());
+    }
+
+    private IEnumerator Desflashear()
+    {
+        yield return new WaitForSeconds(2);
+        weaponScript.flashed = false;
+        flashed = false;
     }
 }

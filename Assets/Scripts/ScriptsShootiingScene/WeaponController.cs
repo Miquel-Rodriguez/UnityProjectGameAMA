@@ -54,7 +54,7 @@ public class WeaponController : MonoBehaviour
         else index = 0;
 
         WeponScript = weapons[index].GetComponent<Weapon>();
-        WeponScript.isAvailable = true;
+       // WeponScript.isAvailable = true;
         if (WeponScript.isAvailable)
         {
             

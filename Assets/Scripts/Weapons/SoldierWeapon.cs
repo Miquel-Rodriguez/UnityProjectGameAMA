@@ -8,11 +8,11 @@ public class SoldierWeapon : EnemyWeapon
     private ParticleSystem particulaTiro;
 
     public bool disparar;
-    public float waitToShoot; 
-
+    public float waitToShoot;
+    public bool flashed;
     private void Update()
     {
-        if(disparar && Time.time >= nextFireTime && Time.time >= waitToShoot)
+        if(disparar && Time.time >= nextFireTime && Time.time >= waitToShoot && !flashed)
         {
             Shoot();
         }
@@ -34,4 +34,6 @@ public class SoldierWeapon : EnemyWeapon
     {
         particulaTiro.Play();
     }
+
+
 }

@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class PlayerController : MonoBehaviour
 {
@@ -11,10 +13,29 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private MoveGunWithMouse moveGunWithMouse;
     [SerializeField] private Scene2Controller scene2Controller;
     [SerializeField] private HealthBar healthBar;
+
+    [SerializeField] private Weapon defaultWeapon;
+    [SerializeField] private Weapon secondWeapon;
+
+
+    [SerializeField]private EnemySoldier[] enemySoldiers;
+
     private bool dead;
     private bool unavez = true;
     private Vector3 vector1;
     [SerializeField] private float medidaAgacharse = 0.7f;
+    private int numCuras=0;
+    private int numGranades;
+    private int numLightGrandades;
+
+    [SerializeField] private TextMeshProUGUI textCuras;
+    [SerializeField] private TextMeshProUGUI textGranade;
+    [SerializeField] private TextMeshProUGUI textLightGranade;
+
+
+    [SerializeField] private float throwForce = 20f;
+    [SerializeField] private GameObject grenadePrefab;
+    [SerializeField] private GameObject LightgrenadePrefab;
 
     void Start()
     {
@@ -56,6 +77,38 @@ public class PlayerController : MonoBehaviour
                 }
             }
 
+            if (Input.GetKeyDown("1"))
+            {
+                if(!(numCuras<=0))
+                {
+                    Healing(50);
+                    numCuras--;
+                }
+                
+            }
+
+            if (Input.GetKeyDown("2"))
+            {
+                if (!(numGranades <= 0))
+                {
+                    ThrowGrenade(1);
+                    numGranades--;
+                }
+               
+            }
+
+            if (Input.GetKeyDown("3"))
+            {
+                if (!(numLightGrandades <= 0))
+                {
+                    ThrowGrenade(0);
+                    numLightGrandades--;
+                }
+             
+            }
+
+ 
+
         }
         else
         {
@@ -69,14 +122,44 @@ public class PlayerController : MonoBehaviour
         {
             if (collision.gameObject.CompareTag("Bullet"))
             {
-                Destroy(collision.gameObject);
                 if (!Input.GetKey("space"))
                 {
                     LessLife(1);
                 }
-                    
-
+                Destroy(collision.gameObject);
             }
+            else if (collision.gameObject.CompareTag("Cura"))
+            {
+                numCuras++;
+                CambiarTextos();
+                Destroy(collision.gameObject);
+            }
+            else if (collision.gameObject.CompareTag("LittleAmmo"))
+            {
+                int i = collision.gameObject.GetComponent<QuantitiLoot>().NumQuantityLoot;
+                secondWeapon.AddBullets(i);
+                Destroy(collision.gameObject);
+            }
+            else if (collision.gameObject.CompareTag("BigAmmo"))
+            {
+                int i = collision.gameObject.GetComponent<QuantitiLoot>().NumQuantityLoot;
+                defaultWeapon.AddBullets(i);
+                Destroy(collision.gameObject);
+            }
+            else if (collision.gameObject.CompareTag("Granade"))
+            {
+                numGranades++;
+                CambiarTextos();
+                Destroy(collision.gameObject);
+            }
+            else if (collision.gameObject.CompareTag("LightGranade"))
+            {
+                numLightGrandades++;
+                CambiarTextos();
+                Destroy(collision.gameObject);
+            }
+            
+
         }
     }
 
@@ -98,6 +181,38 @@ public class PlayerController : MonoBehaviour
     {
         yield return new WaitForSeconds(0.5f);
         scene2Controller.SceneSwitcher(1);
+    }
+
+    private void Healing(int healing)
+    {
+        actualLife += healing;
+        if (actualLife > 300)
+        {
+            actualLife = 300;
+        }
+    }
+
+    private void CambiarTextos()
+    {
+        textCuras.SetText(numCuras.ToString());
+        textGranade.SetText(numGranades.ToString());
+        textLightGranade.SetText(numLightGrandades.ToString());
+    }
+
+    void ThrowGrenade(int num)
+    {
+        GameObject grenade;
+        if (num == 1)
+        {
+            grenade = Instantiate(grenadePrefab, transform.position, transform.rotation);
+        }
+        else
+        {
+            grenade = Instantiate(LightgrenadePrefab, transform.position, transform.rotation);
+        }
+      
+        Rigidbody rb = grenade.GetComponent<Rigidbody>();
+        rb.AddForce(transform.forward * throwForce, ForceMode.VelocityChange);
     }
 
 }

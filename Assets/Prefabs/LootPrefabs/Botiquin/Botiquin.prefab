@@ -14,9 +14,10 @@ GameObject:
   - component: {fileID: 2261536590964405928}
   - component: {fileID: 323557852434921602}
   - component: {fileID: -4790905187379707665}
+  - component: {fileID: -6033095577718146685}
   m_Layer: 0
   m_Name: Botiquin
-  m_TagString: Untagged
+  m_TagString: Cura
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -124,3 +125,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lootName: Medical kit
+--- !u!114 &-6033095577718146685
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8558950328990589910}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad94bac10a9b27a41aa788cffa6e1275, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  numQuantityLoot: 1

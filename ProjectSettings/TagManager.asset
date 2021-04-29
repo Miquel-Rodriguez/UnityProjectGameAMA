@@ -12,6 +12,12 @@ TagManager:
   - ExitToBoss
   - ExitToRoom
   - End
+  - BigAmmo
+  - LittleAmmo
+  - Cura
+  - Enemy
+  - Granade
+  - LightGranade
   layers:
   - Default
   - TransparentFX

@@ -39,24 +39,6 @@ public class Player : MonoBehaviour
             weaponController.GetComponent<Weapon>().Actualbullets += bulletsPackScipt.NumBullets;
 
         }
-        if (other.tag == "Waypoint")
-        {
-            StartCoroutine(moveAndWait(other));
-            
-        }
-        
-    }
-
-    IEnumerator moveAndWait(Collider other)
-    {
-        yield return target = other.gameObject.GetComponent<WayPoint>().nextPoint;
-        speed = 0;
-        yield return new WaitForSeconds(5f);
-        if (speed == 0)
-        {
-            speed += maxSpeed;
-        }
-       
     }
 
     private void TakeDamage(int damage)

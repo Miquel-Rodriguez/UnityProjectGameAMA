@@ -24,7 +24,7 @@ public class PlayerController : MonoBehaviour
     private bool unavez = true;
     private Vector3 vector1;
     [SerializeField] private float medidaAgacharse = 0.7f;
-    private int numCuras=0;
+    [SerializeField] private int numCuras=0;
     private int numGranades;
     private int numLightGrandades;
 
@@ -79,22 +79,25 @@ public class PlayerController : MonoBehaviour
 
             if (Input.GetKeyDown("1"))
             {
+                print(numCuras + "wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww");
                 if(!(numCuras<=0))
                 {
                     Healing(50);
                     numCuras--;
+                    CambiarTextos();
                 }
                 
             }
 
             if (Input.GetKeyDown("2"))
             {
-                if (!(numGranades <= 0))
-                {
+               // if (!(numGranades <= 0))
+           //     {
                     ThrowGrenade(1);
                     numGranades--;
-                }
-               
+                    CambiarTextos();
+             //    }
+
             }
 
             if (Input.GetKeyDown("3"))
@@ -103,6 +106,7 @@ public class PlayerController : MonoBehaviour
                 {
                     ThrowGrenade(0);
                     numLightGrandades--;
+                    CambiarTextos();
                 }
              
             }
@@ -190,6 +194,7 @@ public class PlayerController : MonoBehaviour
         {
             actualLife = 300;
         }
+        healthBar.SetHealth(actualLife);
     }
 
     private void CambiarTextos()

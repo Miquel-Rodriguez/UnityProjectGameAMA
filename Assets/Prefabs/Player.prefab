@@ -140,7 +140,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1889744554749356946}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 72ece51f2901e7445ab60da3685d6b5f, type: 3}
   m_Name: 
@@ -328,7 +328,7 @@ MonoBehaviour:
   m_Path: {fileID: 0}
   m_UpdateMethod: 0
   m_PositionUnits: 1
-  m_Speed: 3
+  m_Speed: 2
   m_Position: 0
 --- !u!114 &1889744555120511719
 MonoBehaviour:
@@ -337,7 +337,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1889744555120511726}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2b24e31c8c5df294fa9da3868fd57307, type: 3}
   m_Name: 
@@ -389,12 +389,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0088b09fbfe0f1a47b139bcad66c4b1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  life: 15
+  life: 300
   actualLife: 0
   moveGunWithMouse: {fileID: 1889744555120511718}
   scene2Controller: {fileID: 0}
   healthBar: {fileID: 0}
+  defaultWeapon: {fileID: 1889744556772284394}
+  secondWeapon: {fileID: 8596456755030400070}
+  enemySoldiers: []
   medidaAgacharse: 0.3
+  numCuras: 3
+  textCuras: {fileID: 0}
+  textGranade: {fileID: 0}
+  textLightGranade: {fileID: 0}
+  throwForce: 20
+  grenadePrefab: {fileID: 8754212712199289696, guid: 23626b62f1424564aa305c95c3798e38, type: 3}
+  LightgrenadePrefab: {fileID: 1214217589890017724, guid: bcca426ac82ea30448048c20ddf0a205, type: 3}
 --- !u!1001 &1889744555308846841
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -404,7 +414,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1506433299, guid: ffc4b1f0fee192242a7c9a700b7aa627, type: 3}
       propertyPath: speed
-      value: 100
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 1506433299, guid: ffc4b1f0fee192242a7c9a700b7aa627, type: 3}
       propertyPath: shootSpeed
@@ -523,6 +533,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4218702736769700693, guid: ffc4b1f0fee192242a7c9a700b7aa627, type: 3}
   m_PrefabInstance: {fileID: 1889744555308846841}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1889744556772284394 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1506433299, guid: ffc4b1f0fee192242a7c9a700b7aa627, type: 3}
+  m_PrefabInstance: {fileID: 1889744555308846841}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2356068016150142376}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8e30a53d2e057145bc5a34d423949bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1889744555964393995
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -594,3 +615,14 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2954033311036083932, guid: ba72fbf6d4fa3a84580ac6f2f722db06, type: 3}
   m_PrefabInstance: {fileID: 1889744555964393995}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &8596456755030400070 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7887218526415779405, guid: ba72fbf6d4fa3a84580ac6f2f722db06, type: 3}
+  m_PrefabInstance: {fileID: 1889744555964393995}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3659013122188272851}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5cd40477a243f37478f94db1f92ad912, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -10704,17 +10704,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: d5db039f0039f48c79eec07d8b158f74, type: 3}
   m_PrefabInstance: {fileID: 1139887993}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1140903072 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8596456755030400070, guid: f9ac365da11135b4b821dca43fe1e358, type: 3}
-  m_PrefabInstance: {fileID: 1889744555257191807}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5cd40477a243f37478f94db1f92ad912, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1143903301
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19373,17 +19362,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 9b87c28772d3f44d8929187f7ca901e4, type: 3}
---- !u!114 &2055786921 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1889744556772284394, guid: f9ac365da11135b4b821dca43fe1e358, type: 3}
-  m_PrefabInstance: {fileID: 1889744555257191807}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f8e30a53d2e057145bc5a34d423949bc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2056515925 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: ba9515a32ea084cf0b1832e4d456ecec, type: 3}
@@ -20804,10 +20782,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 71155347}
     - target: {fileID: 947558299, guid: f9ac365da11135b4b821dca43fe1e358, type: 3}
-      propertyPath: life
-      value: 300
-      objectReference: {fileID: 0}
-    - target: {fileID: 947558299, guid: f9ac365da11135b4b821dca43fe1e358, type: 3}
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 1982577533}
@@ -20820,18 +20794,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1988554301}
     - target: {fileID: 947558299, guid: f9ac365da11135b4b821dca43fe1e358, type: 3}
-      propertyPath: secondWeapon
-      value: 
-      objectReference: {fileID: 1140903072}
-    - target: {fileID: 947558299, guid: f9ac365da11135b4b821dca43fe1e358, type: 3}
-      propertyPath: defaultWeapon
-      value: 
-      objectReference: {fileID: 2055786921}
-    - target: {fileID: 947558299, guid: f9ac365da11135b4b821dca43fe1e358, type: 3}
-      propertyPath: grenadePrefab
-      value: 
-      objectReference: {fileID: 8754212712199289696, guid: 23626b62f1424564aa305c95c3798e38, type: 3}
-    - target: {fileID: 947558299, guid: f9ac365da11135b4b821dca43fe1e358, type: 3}
       propertyPath: scene2Controller
       value: 
       objectReference: {fileID: 268713911}
@@ -20839,18 +20801,6 @@ PrefabInstance:
       propertyPath: textLightGranade
       value: 
       objectReference: {fileID: 1533095470}
-    - target: {fileID: 947558299, guid: f9ac365da11135b4b821dca43fe1e358, type: 3}
-      propertyPath: LightgrenadePrefab
-      value: 
-      objectReference: {fileID: 1214217589890017724, guid: bcca426ac82ea30448048c20ddf0a205, type: 3}
-    - target: {fileID: 947558299, guid: f9ac365da11135b4b821dca43fe1e358, type: 3}
-      propertyPath: enemySoldiers.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1889744554749356941, guid: f9ac365da11135b4b821dca43fe1e358, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1889744555120511720, guid: f9ac365da11135b4b821dca43fe1e358, type: 3}
       propertyPath: m_RootOrder
       value: 2

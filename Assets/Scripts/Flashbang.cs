@@ -30,6 +30,7 @@ public class Flashbang : MonoBehaviour
 
     void Explode()
     {
+        FindObjectOfType<AudioManager>().Play("ExplosionFlash");
         Instantiate(explosionEffect, transform.position, transform.rotation);
 
         Collider[] colliders = Physics.OverlapSphere(transform.position, radius);

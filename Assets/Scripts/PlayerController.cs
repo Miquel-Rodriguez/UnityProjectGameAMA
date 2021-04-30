@@ -148,6 +148,7 @@ public class PlayerController : MonoBehaviour
                 int i = collision.gameObject.GetComponent<QuantitiLoot>().NumQuantityLoot;
                 defaultWeapon.AddBullets(i);
                 Destroy(collision.gameObject);
+                print("quiero añadir balas" + 1);
             }
             else if (collision.gameObject.CompareTag("Granade"))
             {

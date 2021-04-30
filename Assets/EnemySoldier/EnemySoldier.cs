@@ -13,8 +13,7 @@ public class EnemySoldier : MonoBehaviour
     [SerializeField]
     Transform player;
 
-    [SerializeField]
-    Transform playerContainer;
+    [SerializeField] Transform playerContainer;
     [SerializeField] GameObject blood;
     [SerializeField] StopWaypoint stopWaypoint;
 
@@ -46,7 +45,9 @@ public class EnemySoldier : MonoBehaviour
 
     [SerializeField] int life = 100;
 
-    private Vector3 offset = new Vector3(0, 0.5f, 0);
+
+    [SerializeField] private float offsetvalor=0.5f;
+    private Vector3 offset = new Vector3(0, 0, 0);
 
     public bool deadth;
 
@@ -60,7 +61,8 @@ public class EnemySoldier : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         animator.SetBool("Down", true);
-    //    animator.speed = 2;
+        //    animator.speed = 2;
+        offset = new Vector3(0, offsetvalor, 0);
     }
     
     private void Update()
@@ -80,9 +82,10 @@ public class EnemySoldier : MonoBehaviour
             {
                 animator.SetBool("Run", false);
 
-
-                RotateTowards(player, transform);
+                RotateTowards(playerContainer, transform);
                 RotateTowards(player, enemyEyes);
+
+                
 
                 if (WatchingPlayer() && !shooting && !flashed)
                 {
@@ -188,7 +191,7 @@ public class EnemySoldier : MonoBehaviour
 
             FindObjectOfType<AudioManager>().Play("MuerteEnemigo");
             stopWaypoint.numEnemies[stopWaypoint.aux] -= 1;
-
+            blood.SetActive(false);
             weaponScript.disparar = false;
             StopAllCoroutines();
             deadth = true;

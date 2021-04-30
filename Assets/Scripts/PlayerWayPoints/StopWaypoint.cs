@@ -7,10 +7,11 @@ using UnityEngine.SceneManagement;
 public class StopWaypoint : MonoBehaviour
 {
     [SerializeField]CinemachineDollyCart player;
-    public EnemySoldier enemy;
     public MoveGunWithMouse moveCam;
     public GameObject[] lights;
     public GameObject playerLight;
+    public int aux;
+    public int[] numEnemies;
     
     private void Start()
     {
@@ -19,7 +20,7 @@ public class StopWaypoint : MonoBehaviour
     }
     private void Update()
     {
-       if (enemy.deadth)
+       if (numEnemies[aux] == 0)
         {
             player.enabled = true;
             moveCam.enabled = false;
@@ -32,7 +33,12 @@ public class StopWaypoint : MonoBehaviour
        
         if (other.tag == "Waypoint")
         {
+            
+                aux += 1;
+            
             Stop();
+           
+            
 
         }
 

@@ -16,6 +16,7 @@ public class EnemySoldier : MonoBehaviour
     [SerializeField]
     Transform playerContainer;
     [SerializeField] GameObject blood;
+    [SerializeField] StopWaypoint stopWaypoint;
 
     RaycastHit hit;
 
@@ -103,7 +104,8 @@ public class EnemySoldier : MonoBehaviour
         }
         else
         {
-            Lesslife(100);
+           
+           
 
         }
     }
@@ -185,6 +187,7 @@ public class EnemySoldier : MonoBehaviour
         {
 
             FindObjectOfType<AudioManager>().Play("MuerteEnemigo");
+            stopWaypoint.numEnemies[stopWaypoint.aux] -= 1;
 
             weaponScript.disparar = false;
             StopAllCoroutines();

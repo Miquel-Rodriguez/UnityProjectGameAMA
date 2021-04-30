@@ -90,23 +90,23 @@ public class PlayerController : MonoBehaviour
 
             if (Input.GetKeyDown("2"))
             {
-               if (!(numGranades <= 0))
-                {
+              // if (!(numGranades <= 0))
+              //  {
                     ThrowGrenade(1);
                     numGranades--;
                     CambiarTextos();
-                }
+              //  }
                
             }
 
             if (Input.GetKeyDown("3"))
             {
-                if (!(numLightGrandades <= 0))
-                {
+            //    if (!(numLightGrandades <= 0))
+             //   {
                     ThrowGrenade(0);
                     numLightGrandades--;
                     CambiarTextos();
-                }
+              //  }
              
             }
 

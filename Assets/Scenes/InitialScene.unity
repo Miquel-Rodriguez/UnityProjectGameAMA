@@ -292,7 +292,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &241355788
 RectTransform:
   m_ObjectHideFlags: 0
@@ -359,11 +359,11 @@ MonoBehaviour:
       - m_Target: {fileID: 487576388}
         m_TargetAssemblyTypeName: InitialSceneController, Assembly-CSharp
         m_MethodName: SceneSwitcher
-        m_Mode: 1
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -603,7 +603,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &818621125
 RectTransform:
   m_ObjectHideFlags: 0
@@ -619,10 +619,10 @@ RectTransform:
   m_Father: {fileID: 1640882376}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.17738299, y: 0.39368686}
-  m_AnchorMax: {x: 0.35636175, y: 0.47021216}
-  m_AnchoredPosition: {x: 0.5999756, y: -0.1210022}
-  m_SizeDelta: {x: 0.1357727, y: 2}
+  m_AnchorMin: {x: 0.4094375, y: 0.36033893}
+  m_AnchorMax: {x: 0.59049475, y: 0.44133893}
+  m_AnchoredPosition: {x: -0.9600067, y: -0.6000061}
+  m_SizeDelta: {x: 0.1357727, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &818621126
 MonoBehaviour:
@@ -830,10 +830,10 @@ RectTransform:
   m_Father: {fileID: 1640882376}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.4094375, y: 0.24463639}
-  m_AnchorMax: {x: 0.5867447, y: 0.32942426}
-  m_AnchoredPosition: {x: -0.067848206, y: -5.900009}
-  m_SizeDelta: {x: 0.1357727, y: 0}
+  m_AnchorMin: {x: 0.4094375, y: 0.23133896}
+  m_AnchorMax: {x: 0.5867447, y: 0.3138982}
+  m_AnchoredPosition: {x: -0.067840576, y: 0.7304077}
+  m_SizeDelta: {x: 0.1357727, y: 1}
   m_Pivot: {x: 0.5, y: 0.6304467}
 --- !u!114 &1061921909
 MonoBehaviour:
@@ -962,9 +962,9 @@ RectTransform:
   m_Father: {fileID: 1640882376}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.4094375, y: 0.47021216}
-  m_AnchorMax: {x: 0.5867447, y: 0.5507879}
-  m_AnchoredPosition: {x: 0.06790924, y: 6}
+  m_AnchorMin: {x: 0.4094375, y: 0.48444045}
+  m_AnchorMax: {x: 0.5867447, y: 0.5641017}
+  m_AnchoredPosition: {x: 0.06790161, y: 0}
   m_SizeDelta: {x: 0.1357727, y: 0}
   m_Pivot: {x: 0.5, y: 0.50000054}
 --- !u!114 &1443230645
@@ -1013,11 +1013,11 @@ MonoBehaviour:
       - m_Target: {fileID: 487576388}
         m_TargetAssemblyTypeName: InitialSceneController, Assembly-CSharp
         m_MethodName: SceneSwitcher
-        m_Mode: 1
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -1254,7 +1254,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.17738299, y: 0.5752139}
   m_AnchorMax: {x: 0.8336595, y: 0.804}
-  m_AnchoredPosition: {x: 0.3527527, y: -2.0180054}
+  m_AnchoredPosition: {x: 0.35272217, y: -2.0180054}
   m_SizeDelta: {x: -0.70544434, y: 5.9266663}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1833675626
@@ -1752,7 +1752,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 815417577042739375, guid: 4573f67a14b068548b9f951d4b613d18, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4720891737963455398, guid: 4573f67a14b068548b9f951d4b613d18, type: 3}
       propertyPath: m_AnchoredPosition.x

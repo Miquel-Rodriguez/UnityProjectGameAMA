@@ -774,7 +774,7 @@ MonoBehaviour:
   reloadSpeed: 1
   capacityCharger: 1
   shootSpeed: 0.2
-  shootPoint: {fileID: 1848054632}
+  shootPoint: {fileID: 0}
   reloading: 0
   bullet: {fileID: 5015922739120436824, guid: af381d65bb06f1447b67ccbdf607addc, type: 3}
   actualbullets: 0
@@ -860,7 +860,7 @@ GameObject:
   - component: {fileID: 9054916153001326004}
   m_Layer: 0
   m_Name: mixamorig:LeftLeg
-  m_TagString: Enemy
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -921,7 +921,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: -1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.000000004423717, y: 0.45053297, z: -0.00000006740415}
+  m_ConnectedAnchor: {x: 0.0000000342256, y: 0.45053297, z: -0.000000067578775}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 0, z: 1}
   m_TwistLimitSpring:
@@ -1165,9 +1165,11 @@ GameObject:
   - component: {fileID: 9054916153228776649}
   - component: {fileID: 9054916153228776648}
   - component: {fileID: 9054916152428243453}
+  - component: {fileID: 714534332}
+  - component: {fileID: 714534331}
   m_Layer: 0
   m_Name: Soldier
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1224,6 +1226,7 @@ MonoBehaviour:
   visionRange: 10
   player: {fileID: 0}
   playerContainer: {fileID: 0}
+  blood: {fileID: 7791861615215912422}
   weaponScript: {fileID: 775045370}
   maxTimeShooting: 5
   minTimeShooting: 5
@@ -1237,6 +1240,38 @@ MonoBehaviour:
   deadth: 0
   runing: 0
   flashed: 0
+--- !u!65 &714534332
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9054916153228776651}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.74331367, y: 0.12891126, z: 1}
+  m_Center: {x: 0.12834316, y: -0.110073686, z: 0}
+--- !u!114 &714534331
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9054916153228776651}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1901cb2bfe42824db6668da0ee5e70e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  loots:
+  - {fileID: 8558950328990589910, guid: fca0c82193c766e44a0cf5d52f4470a7, type: 3}
+  - {fileID: 2044120738187761020, guid: a27d4dec977bced40b679887368f099e, type: 3}
+  - {fileID: 7134124785335431999, guid: 870fef28454bd614e8922eb4c5467b9c, type: 3}
+  - {fileID: 1725504642299284771, guid: 7ca412f40cec2864996797fc24423dca, type: 3}
+  - {fileID: 3777234966390439776, guid: 1a0cfd72f8199bc4a98e33a4e2d84baf, type: 3}
+  probabilityTable: 1400000014000000140000001400000014000000
 --- !u!1 &9054916153249383963
 GameObject:
   m_ObjectHideFlags: 0
@@ -1806,7 +1841,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: 0, z: -1}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.23919882, y: 0.10365011, z: -0.0054559316}
+  m_ConnectedAnchor: {x: 0.23919876, y: 0.10365011, z: -0.005455693}
   serializedVersion: 2
   m_SwingAxis: {x: -1, y: 0, z: 0}
   m_TwistLimitSpring:
@@ -2647,7 +2682,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: 0, z: -1}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.23919849, y: 0.10351111, z: -0.0035722982}
+  m_ConnectedAnchor: {x: -0.23919849, y: 0.10351117, z: -0.0035725366}
   serializedVersion: 2
   m_SwingAxis: {x: 1, y: 0, z: 0}
   m_TwistLimitSpring:
@@ -2962,7 +2997,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: -1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.00000012107196, y: 0.20688026, z: -0.00000027567154}
+  m_ConnectedAnchor: {x: -0.00000011967498, y: 0.20688032, z: -0.00000027567154}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 0, z: -1}
   m_TwistLimitSpring:
@@ -3117,7 +3152,7 @@ GameObject:
   - component: {fileID: 9054916154049565749}
   m_Layer: 0
   m_Name: mixamorig:LeftUpLeg
-  m_TagString: Enemy
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3178,7 +3213,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: -1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.09640738, y: -0.06119281, z: 0.0058660554}
+  m_ConnectedAnchor: {x: -0.09640741, y: -0.06119281, z: 0.005866294}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 0, z: 1}
   m_TwistLimitSpring:
@@ -3866,7 +3901,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: -1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.09640739, y: -0.061192762, z: 0.003588535}
+  m_ConnectedAnchor: {x: 0.09640742, y: -0.061192762, z: 0.003588535}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 0, z: 1}
   m_TwistLimitSpring:
@@ -4341,14 +4376,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7ff8f5b94246aad4c91ff9c10e776cbe, type: 3}
---- !u!4 &8748153031544002921 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8748153032453913370, guid: 7ff8f5b94246aad4c91ff9c10e776cbe, type: 3}
-  m_PrefabInstance: {fileID: 1237590643}
-  m_PrefabAsset: {fileID: 0}
 --- !u!198 &8748153031544002923 stripped
 ParticleSystem:
   m_CorrespondingSourceObject: {fileID: 8748153032453913368, guid: 7ff8f5b94246aad4c91ff9c10e776cbe, type: 3}
+  m_PrefabInstance: {fileID: 1237590643}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &8748153031544002921 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8748153032453913370, guid: 7ff8f5b94246aad4c91ff9c10e776cbe, type: 3}
   m_PrefabInstance: {fileID: 1237590643}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7791734619036499202
@@ -4420,6 +4455,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: abb9f519b142e304d9c45b56afa768bc, type: 3}
+--- !u!1 &7791861615215912422 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1000012909287652, guid: abb9f519b142e304d9c45b56afa768bc, type: 3}
+  m_PrefabInstance: {fileID: 7791734619036499202}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7795722876964018288 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4000013488956786, guid: abb9f519b142e304d9c45b56afa768bc, type: 3}

@@ -83,16 +83,18 @@ public class PlayerController : MonoBehaviour
                 {
                     Healing(50);
                     numCuras--;
+                    CambiarTextos();
                 }
                 
             }
 
             if (Input.GetKeyDown("2"))
             {
-                if (!(numGranades <= 0))
+               if (!(numGranades <= 0))
                 {
                     ThrowGrenade(1);
                     numGranades--;
+                    CambiarTextos();
                 }
                
             }
@@ -103,6 +105,7 @@ public class PlayerController : MonoBehaviour
                 {
                     ThrowGrenade(0);
                     numLightGrandades--;
+                    CambiarTextos();
                 }
              
             }
@@ -190,6 +193,7 @@ public class PlayerController : MonoBehaviour
         {
             actualLife = 300;
         }
+        healthBar.SetHealth(actualLife);
     }
 
     private void CambiarTextos()

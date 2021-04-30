@@ -30,7 +30,7 @@ public class Flashbang : MonoBehaviour
 
     void Explode()
     {
-        Instantiate(explosionEffect, transform.position, transform.rotation);
+        GameObject flashLight =   Instantiate(explosionEffect, transform.position, transform.rotation);
 
         Collider[] colliders = Physics.OverlapSphere(transform.position, radius);
 
@@ -45,7 +45,8 @@ public class Flashbang : MonoBehaviour
 
 
         }
-
+        Destroy(flashLight, 0.1f);
+        print("me estoy apunto de destruir");
         Destroy(gameObject);
     }
 }

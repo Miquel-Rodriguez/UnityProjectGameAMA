@@ -23,12 +23,12 @@ public class InitialSceneController : MonoBehaviour
     {
         Application.Quit();
     }
-    public void SceneSwitcher()
+    public void SceneSwitcher(int numscene)
     {
-        StartCoroutine(Switch());
+        StartCoroutine(Switch(numscene));
     }
 
-    private IEnumerator Switch()
+    private IEnumerator Switch(int numscene)
     {
         FadeIn();
         yield return new WaitForSeconds(fadeTime + 1.5f);

@@ -118,6 +118,7 @@ public class Weapon : MonoBehaviour
     {
         actualbullets += bulletsToAdd;
         textTotalBullets.text = actualbullets.ToString();
+        print("añadiendo bullets");
     }
 
     public void SetTextAndImages()

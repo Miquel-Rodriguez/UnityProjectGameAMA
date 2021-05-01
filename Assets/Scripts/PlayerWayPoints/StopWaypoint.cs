@@ -28,20 +28,14 @@ public class StopWaypoint : MonoBehaviour
 
     }
 
-    public IEnumerator prueba()
-    {
-        yield return new WaitForSeconds(0.5f);
-        aux += 1;
-        Stop();
-    }
-
     private void OnTriggerEnter(Collider other)
     {
        
         if (other.tag == "Waypoint")
         {
-            StartCoroutine(prueba());
-
+            Stop();
+            aux += 1;          
+            other.enabled = false;
         }
 
         if (other.tag == "WaypointBoss")

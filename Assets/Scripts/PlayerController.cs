@@ -129,6 +129,7 @@ public class PlayerController : MonoBehaviour
                 {
                     LessLife(1);
                 }
+                print(collision.gameObject.tag);
                 Destroy(collision.gameObject);
             }
             else if (collision.gameObject.CompareTag("Cura"))

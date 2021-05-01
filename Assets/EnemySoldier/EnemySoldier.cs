@@ -43,7 +43,7 @@ public class EnemySoldier : MonoBehaviour
 
     bool shooting = false;
 
-    [SerializeField] int life = 100;
+    public int life = 100;
 
 
     [SerializeField] private float offsetvalor=0.5f;
@@ -190,7 +190,7 @@ public class EnemySoldier : MonoBehaviour
         if (life <= 0)
         {
 
-         //   FindObjectOfType<AudioManager>().Play("MuerteEnemigo");
+            FindObjectOfType<AudioManager>().Play("MuerteEnemigo");
             blood.SetActive(false);
             weaponScript.disparar = false;
             StopAllCoroutines();
@@ -199,6 +199,8 @@ public class EnemySoldier : MonoBehaviour
             InstantiateLoot ins = GetComponent<InstantiateLoot>();
             ins.InsantieteLoots();
             stopWaypoint.numEnemies[stopWaypoint.aux] -= 1;
+            
+            
         }
     }
 

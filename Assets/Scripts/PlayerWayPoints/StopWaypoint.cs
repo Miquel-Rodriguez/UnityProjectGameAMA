@@ -20,19 +20,21 @@ public class StopWaypoint : MonoBehaviour
     }
     private void Update()
     {
-       if (numEnemies[aux] <= 0)
+        
+        if (numEnemies[aux] <= 0)
         {
-            player.enabled = true;
+           
             moveCam.enabled = false;
-        }
+            StartCoroutine(move());
+            player.enabled = true;
 
+        }
     }
 
-    public IEnumerator prueba()
+    public IEnumerator move()
     {
-        yield return new WaitForSeconds(0.5f);
-        aux += 1;
-        Stop();
+        yield return new WaitForSeconds(2f);
+
     }
 
     private void OnTriggerEnter(Collider other)
@@ -40,7 +42,9 @@ public class StopWaypoint : MonoBehaviour
        
         if (other.CompareTag("Waypoint"))
         {
-            StartCoroutine(prueba());
+            
+            Stop();
+            other.enabled = false;
 
         }
 
@@ -80,8 +84,8 @@ public class StopWaypoint : MonoBehaviour
     {
         player.enabled = false;
         moveCam.enabled = true;
-       
-        
+        aux += 1;
+
     }
 
     private void ChangeSceneToBoss()

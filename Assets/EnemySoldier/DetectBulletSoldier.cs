@@ -15,7 +15,11 @@ public class DetectBulletSoldier : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Bullet"))
         {
-           enemySoldierScript.Lesslife(damage);
+            if (enemySoldierScript.life >= 0)
+            {
+                enemySoldierScript.Lesslife(damage);
+            }
+           
         }
     }
 

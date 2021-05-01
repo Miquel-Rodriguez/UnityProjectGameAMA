@@ -38,7 +38,7 @@ public class StopWaypoint : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
        
-        if (other.tag == "Waypoint")
+        if (other.CompareTag("Waypoint"))
         {
             StartCoroutine(prueba());
 

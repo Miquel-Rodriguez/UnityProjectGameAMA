@@ -70,6 +70,7 @@ public class EnemySoldier : MonoBehaviour
         if (!deadth)
         {
             print(flashed);
+            print(WatchingPlayer());
 
             if (runing)
             {

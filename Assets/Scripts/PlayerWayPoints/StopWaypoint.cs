@@ -20,7 +20,7 @@ public class StopWaypoint : MonoBehaviour
     }
     private void Update()
     {
-       if (numEnemies[aux] == 0)
+       if (numEnemies[aux] <= 0)
         {
             player.enabled = true;
             moveCam.enabled = false;
@@ -28,17 +28,19 @@ public class StopWaypoint : MonoBehaviour
 
     }
 
+    public IEnumerator prueba()
+    {
+        yield return new WaitForSeconds(0.5f);
+        aux += 1;
+        Stop();
+    }
+
     private void OnTriggerEnter(Collider other)
     {
        
         if (other.tag == "Waypoint")
         {
-            
-                aux += 1;
-            
-            Stop();
-           
-            
+            StartCoroutine(prueba());
 
         }
 

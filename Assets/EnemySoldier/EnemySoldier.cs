@@ -190,7 +190,6 @@ public class EnemySoldier : MonoBehaviour
         {
 
             FindObjectOfType<AudioManager>().Play("MuerteEnemigo");
-            stopWaypoint.numEnemies[stopWaypoint.aux] -= 1;
             blood.SetActive(false);
             weaponScript.disparar = false;
             StopAllCoroutines();
@@ -198,6 +197,7 @@ public class EnemySoldier : MonoBehaviour
             animator.SetBool("Die", true);
             InstantiateLoot ins = GetComponent<InstantiateLoot>();
             ins.InsantieteLoots();
+            stopWaypoint.numEnemies[stopWaypoint.aux] -= 1;
         }
     }
 

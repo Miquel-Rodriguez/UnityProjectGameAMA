@@ -80,7 +80,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1951169524117545220}
-  m_LocalRotation: {x: 0.00066861935, y: 0.07929334, z: -0.0023612555, w: 0.9968483}
+  m_LocalRotation: {x: 0.0006698153, y: 0.079296, z: -0.0023643344, w: 0.99684805}
   m_LocalPosition: {x: 0.5413519, y: -0.15419802, z: -7.452988}
   m_LocalScale: {x: 0.69999987, y: 0.7000002, z: 0.7}
   m_Children:
@@ -89,7 +89,7 @@ Transform:
   - {fileID: 1951169523397461927}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 1, y: 1, z: 0}
+  m_LocalEulerAnglesHint: {x: 0.098, y: 9.096, z: -0.264}
 --- !u!33 &1951169524117545219
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -443,6 +443,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1951169523397461927}
     m_Modifications:
+    - target: {fileID: 6528064036957992903, guid: 48ed548bc69858e4daced703cbed5e25, type: 3}
+      propertyPath: weaponImage
+      value: 
+      objectReference: {fileID: 21300000, guid: 1509bfd7c1ae6024fab110a9e70b10ea, type: 3}
     - target: {fileID: 6528064038256051210, guid: 48ed548bc69858e4daced703cbed5e25, type: 3}
       propertyPath: m_Name
       value: Pistol
@@ -521,6 +525,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1951169523397461927}
     m_Modifications:
+    - target: {fileID: 6358253993298430655, guid: 1f51cc4b005324f44a5623ec4b4e00c9, type: 3}
+      propertyPath: weaponImage
+      value: 
+      objectReference: {fileID: 21300000, guid: 95a1eb82b19c71841a03547e6b9a757a, type: 3}
     - target: {fileID: 6358253994003013594, guid: 1f51cc4b005324f44a5623ec4b4e00c9, type: 3}
       propertyPath: m_Name
       value: Heavy

@@ -11428,6 +11428,7 @@ MonoBehaviour:
   minTimewaitToUp: 5
   maxTimeWaitToUp: 5
   life: 100
+  offsetvalor: 0
   deadth: 0
   runing: 0
   flashed: 0

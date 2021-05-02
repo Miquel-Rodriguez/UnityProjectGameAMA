@@ -9,15 +9,15 @@ public class StopWaypoint : MonoBehaviour
     [SerializeField]CinemachineDollyCart player;
     [SerializeField] Scene2Controller sceneController;
     public MoveGunWithMouse moveCam;
-    public GameObject[] lights;
-    public GameObject playerLight;
+    public GameObject light1;
+    public GameObject light2;
+    public GameObject light3;
     public int aux;
     public int[] numEnemies;
-    public PlayerController sentarse;
     
     private void Start()
     {
-        lights = GameObject.FindGameObjectsWithTag("Light");
+        
 
     }
     private void Update()
@@ -53,14 +53,13 @@ public class StopWaypoint : MonoBehaviour
 
         if (other.tag == "WaypointBoss")
         {
-            Stop();
-            playerLight.SetActive(false);
-           
 
-            foreach (GameObject go in lights)
-            {
-                go.SetActive(true);
-            }
+            Stop();
+
+            light1.SetActive(true);
+            light2.SetActive(true);
+            light3.SetActive(true);
+
         }
 
         if (other.tag == "ExitToBoss")

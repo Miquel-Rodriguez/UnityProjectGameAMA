@@ -54502,6 +54502,10 @@ PrefabInstance:
       value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 1951169524117545222, guid: f9ac365da11135b4b821dca43fe1e358, type: 3}
+      propertyPath: numCuras
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1951169524117545222, guid: f9ac365da11135b4b821dca43fe1e358, type: 3}
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 771118707}
@@ -54509,6 +54513,10 @@ PrefabInstance:
       propertyPath: textCuras
       value: 
       objectReference: {fileID: 852371049}
+    - target: {fileID: 1951169524117545222, guid: f9ac365da11135b4b821dca43fe1e358, type: 3}
+      propertyPath: numGranades
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 1951169524117545222, guid: f9ac365da11135b4b821dca43fe1e358, type: 3}
       propertyPath: textGranade
       value: 
@@ -54521,6 +54529,10 @@ PrefabInstance:
       propertyPath: textLightGranade
       value: 
       objectReference: {fileID: 1805658089}
+    - target: {fileID: 1951169524117545222, guid: f9ac365da11135b4b821dca43fe1e358, type: 3}
+      propertyPath: numLightGrandades
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 1951169524117545223, guid: f9ac365da11135b4b821dca43fe1e358, type: 3}
       propertyPath: listaTextos.Array.data[0]
       value: 

@@ -34557,6 +34557,10 @@ PrefabInstance:
       value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 1951169524117545222, guid: f9ac365da11135b4b821dca43fe1e358, type: 3}
+      propertyPath: numCuras
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1951169524117545222, guid: f9ac365da11135b4b821dca43fe1e358, type: 3}
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 1920969452}
@@ -34564,6 +34568,10 @@ PrefabInstance:
       propertyPath: textCuras
       value: 
       objectReference: {fileID: 1920969451}
+    - target: {fileID: 1951169524117545222, guid: f9ac365da11135b4b821dca43fe1e358, type: 3}
+      propertyPath: numGranades
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 1951169524117545222, guid: f9ac365da11135b4b821dca43fe1e358, type: 3}
       propertyPath: textGranade
       value: 
@@ -34576,6 +34584,10 @@ PrefabInstance:
       propertyPath: textLightGranade
       value: 
       objectReference: {fileID: 1920969449}
+    - target: {fileID: 1951169524117545222, guid: f9ac365da11135b4b821dca43fe1e358, type: 3}
+      propertyPath: numLightGrandades
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 1951169524117545223, guid: f9ac365da11135b4b821dca43fe1e358, type: 3}
       propertyPath: listaTextos.Array.data[0]
       value: 
@@ -39361,7 +39373,7 @@ MonoBehaviour:
   bullet: {fileID: 5015922739120436824, guid: af381d65bb06f1447b67ccbdf607addc, type: 3}
   actualbullets: 99
   isAvailable: 0
-  particulaTiro: {fileID: 2056158822}
+  particulaTiro: {fileID: 0}
   disparar: 1
   enemyEyes: {fileID: 1634749270}
   visionRange: 10
@@ -50899,11 +50911,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8301ea8c6c341e44c9cd35fb6f2e1428, type: 3}
---- !u!198 &2056158822 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 6026108304316172679, guid: fc0b934fd15f0a3a5a750dbce6116ea6, type: 3}
-  m_PrefabInstance: {fileID: 1774509187}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2056564907
 PrefabInstance:
   m_ObjectHideFlags: 0

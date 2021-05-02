@@ -137,7 +137,7 @@ public class EnemySoldier : MonoBehaviour
     {
         vengoDeAbajo = true;
         weaponScript.disparar = false;
-        enemyEyes.position = transform.position+new Vector3(0,1,0);
+        enemyEyes.position = transform.position+new Vector3(0,enemyEyes.position.y-0.1f,0);
         animator.SetBool("NormalShooting", false);
         animator.SetBool("Down", true);
         waitToUp = Random.Range(minTimewaitToUp, maxTimeWaitToUp);
@@ -145,7 +145,7 @@ public class EnemySoldier : MonoBehaviour
         waitToDown = Time.time + Random.Range(minTimewaitwaitToDown, maxTimeWaitwaitToDown);
         animator.SetBool("Down", false);
         down = false;
-        enemyEyes.position = transform.position + new Vector3(0, 1.75f, 0);
+        enemyEyes.position = transform.position + new Vector3(0, 1.2f, 0);
        
     }
 

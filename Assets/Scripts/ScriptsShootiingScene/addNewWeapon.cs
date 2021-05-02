@@ -19,10 +19,10 @@ public class addNewWeapon : MonoBehaviour
         
     }
 
-    private void OnCollisionEnter (Collision collision)
-    {
-        
-            weaponController.ActiveWeapon(index);
 
+
+    private void OnTriggerEnter(Collider other)
+    {
+        weaponController.ActiveWeapon(index);
     }
 }

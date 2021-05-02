@@ -190,7 +190,7 @@ public class EnemySoldier : MonoBehaviour
         if (life <= 0)
         {
 
-            //FindObjectOfType<AudioManager>().Play("MuerteEnemigo");
+            FindObjectOfType<AudioManager>().Play("MuerteEnemigo");
             blood.SetActive(false);
             weaponScript.disparar = false;
             StopAllCoroutines();

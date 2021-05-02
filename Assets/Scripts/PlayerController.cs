@@ -21,7 +21,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField]private EnemySoldier[] enemySoldiers;
 
     private bool dead;
-    private bool unavez = true;
+    public bool unavez = true;
     private Vector3 vector1;
     [SerializeField] private float medidaAgacharse = 0.7f;
     private int numCuras=0;
@@ -75,6 +75,12 @@ public class PlayerController : MonoBehaviour
                 {
                     transform.position = Vector3.MoveTowards(transform.position, vector1, 2 * Time.deltaTime);
                 }
+                if (transform.position.y.Equals(vector1.y))
+                {
+                    unavez = true;
+                }
+
+                
             }
 
             if (Input.GetKeyDown("1"))

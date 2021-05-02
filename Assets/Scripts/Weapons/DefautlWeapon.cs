@@ -44,7 +44,7 @@ public class DefautlWeapon : Weapon
 
         if (Input.GetKeyDown("r") && Time.time >= nextReload && Actualbullets != 0)
         {
-            FindObjectOfType<AudioManager>().Play("Recargar");
+            //FindObjectOfType<AudioManager>().Play("Recargar");
             StartCoroutine(Reload());
         }
 

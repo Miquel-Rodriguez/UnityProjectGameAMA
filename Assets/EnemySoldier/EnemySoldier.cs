@@ -190,7 +190,7 @@ public class EnemySoldier : MonoBehaviour
         if (life <= 0)
         {
 
-            FindObjectOfType<AudioManager>().Play("MuerteEnemigo");
+            //FindObjectOfType<AudioManager>().Play("MuerteEnemigo");
             blood.SetActive(false);
             weaponScript.disparar = false;
             StopAllCoroutines();
@@ -230,7 +230,7 @@ public class EnemySoldier : MonoBehaviour
 
     private IEnumerator Desflashear()
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(6f);
         weaponScript.flashed = false;
         flashed = false;
     }

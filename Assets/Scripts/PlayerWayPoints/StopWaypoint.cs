@@ -13,6 +13,7 @@ public class StopWaypoint : MonoBehaviour
     public GameObject playerLight;
     public int aux;
     public int[] numEnemies;
+    public PlayerController sentarse;
     
     private void Start()
     {
@@ -46,6 +47,7 @@ public class StopWaypoint : MonoBehaviour
             
             Stop();
             other.enabled = false;
+            
 
         }
 
@@ -84,6 +86,7 @@ public class StopWaypoint : MonoBehaviour
 
     private void Stop()
     {
+        
         player.enabled = false;
         moveCam.enabled = true;
         aux += 1;

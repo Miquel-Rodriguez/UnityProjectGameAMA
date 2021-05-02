@@ -11830,9 +11830,25 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5771347577139133830, guid: 8483deb7ef17d4e4b8c256598555ff8f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 233848888}
+    - target: {fileID: 5771347577139133830, guid: 8483deb7ef17d4e4b8c256598555ff8f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: CambiarEstadoStopMenu
+      objectReference: {fileID: 0}
     - target: {fileID: 5771347577147953448, guid: 8483deb7ef17d4e4b8c256598555ff8f, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5771347577158691188, guid: 8483deb7ef17d4e4b8c256598555ff8f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 233848888}
+    - target: {fileID: 5771347577158691188, guid: 8483deb7ef17d4e4b8c256598555ff8f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SceneSwitcher
       objectReference: {fileID: 0}
     - target: {fileID: 5771347577193375400, guid: 8483deb7ef17d4e4b8c256598555ff8f, type: 3}
       propertyPath: m_Name
@@ -11926,21 +11942,37 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5771347577251845336, guid: 8483deb7ef17d4e4b8c256598555ff8f, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -0.54000854
-      objectReference: {fileID: 0}
-    - target: {fileID: 5771347577384996697, guid: 8483deb7ef17d4e4b8c256598555ff8f, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -0.2900238
+    - target: {fileID: 5771347577468070772, guid: 8483deb7ef17d4e4b8c256598555ff8f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 233848888}
+    - target: {fileID: 5771347577468070772, guid: 8483deb7ef17d4e4b8c256598555ff8f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: QuitGame
       objectReference: {fileID: 0}
     - target: {fileID: 5771347577748574416, guid: 8483deb7ef17d4e4b8c256598555ff8f, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 5771347577748574417, guid: 8483deb7ef17d4e4b8c256598555ff8f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 233848888}
+    - target: {fileID: 5771347577748574417, guid: 8483deb7ef17d4e4b8c256598555ff8f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SceneSwitcher
+      objectReference: {fileID: 0}
     - target: {fileID: 5771347577816223492, guid: 8483deb7ef17d4e4b8c256598555ff8f, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5771347577981309892, guid: 8483deb7ef17d4e4b8c256598555ff8f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 233848888}
+    - target: {fileID: 5771347577981309892, guid: 8483deb7ef17d4e4b8c256598555ff8f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SceneSwitcher
       objectReference: {fileID: 0}
     - target: {fileID: 5771347577981309895, guid: 8483deb7ef17d4e4b8c256598555ff8f, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -11958,21 +11990,21 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: 0.5700073
       objectReference: {fileID: 0}
-    - target: {fileID: 5771347578215711980, guid: 8483deb7ef17d4e4b8c256598555ff8f, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -0.39990234
+    - target: {fileID: 5771347578570506765, guid: 8483deb7ef17d4e4b8c256598555ff8f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 233848888}
+    - target: {fileID: 5771347578570506765, guid: 8483deb7ef17d4e4b8c256598555ff8f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: CambiarEstadoHoyToPlay
       objectReference: {fileID: 0}
-    - target: {fileID: 5771347578367295338, guid: 8483deb7ef17d4e4b8c256598555ff8f, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -17.099976
-      objectReference: {fileID: 0}
-    - target: {fileID: 5771347578673990517, guid: 8483deb7ef17d4e4b8c256598555ff8f, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -0.39990234
-      objectReference: {fileID: 0}
-    - target: {fileID: 6577230161987037718, guid: 8483deb7ef17d4e4b8c256598555ff8f, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -1
+    - target: {fileID: 6577230161987037719, guid: 8483deb7ef17d4e4b8c256598555ff8f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 233848888}
+    - target: {fileID: 6577230161987037719, guid: 8483deb7ef17d4e4b8c256598555ff8f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: CambiarEstadoHoyToPlay
       objectReference: {fileID: 0}
     - target: {fileID: 6577230163010609000, guid: 8483deb7ef17d4e4b8c256598555ff8f, type: 3}
       propertyPath: m_IsActive
@@ -54345,6 +54377,10 @@ PrefabInstance:
       propertyPath: m_Path
       value: 
       objectReference: {fileID: 1208317823}
+    - target: {fileID: 1951169524117545222, guid: f9ac365da11135b4b821dca43fe1e358, type: 3}
+      propertyPath: life
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1951169524117545222, guid: f9ac365da11135b4b821dca43fe1e358, type: 3}
       propertyPath: healthBar
       value: 

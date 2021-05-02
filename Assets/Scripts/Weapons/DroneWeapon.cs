@@ -6,6 +6,7 @@ public class DroneWeapon : EnemyWeapon
 {
 
     public ParticleSystem particulaTiro;
+    public bool disparar = true;
 
     public void Start()
     {
@@ -19,7 +20,7 @@ public class DroneWeapon : EnemyWeapon
     {
         if (bulletsCharge != 0)
         {
-            if ( Time.time >= nextFireTime && !reloading)
+            if (Time.time >= nextFireTime && !reloading )
             {
                 InstanceShoot();
                 disparo();
@@ -48,7 +49,7 @@ public class DroneWeapon : EnemyWeapon
 
     }
 
-    private void disparo()
+    public void disparo()
     {
         particulaTiro.Play();
     }

@@ -1,0 +1,106 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6951323822878141070
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6951323822878141072}
+  - component: {fileID: 6951323822878141071}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6951323822878141072
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6951323822878141070}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6951323822878141071
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6951323822878141070}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 150eda01030e6e144b39ea97125e9e95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: Disparo
+    clip: {fileID: 8300000, guid: a6b1f2bd2c809b144ac714a902db943e, type: 3}
+    volume: 0.1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: DisparoEnemigo
+    clip: {fileID: 8300000, guid: 7b13ee5291c331041a71d9d9b499266c, type: 3}
+    volume: 0.08
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: MenuPrincipal
+    clip: {fileID: 8300000, guid: 2c6b4061e784b7d4795975fb6c24e9d0, type: 3}
+    volume: 0.01
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: Stage1
+    clip: {fileID: 8300000, guid: 69e7e2a6f4531834481a7b709cc4acbb, type: 3}
+    volume: 0.01
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: MuerteEnemigo
+    clip: {fileID: 8300000, guid: db24c412d3ec55641b8528ea9b18b84d, type: 3}
+    volume: 0.348
+    pitch: 0.75
+    loop: 0
+    source: {fileID: 0}
+  - name: Recargar
+    clip: {fileID: 8300000, guid: d15b73537dede474d92a8fae2b88c115, type: 3}
+    volume: 0.4
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Stage2
+    clip: {fileID: 8300000, guid: 02e32f16b7c37514e9d95490bbf393cf, type: 3}
+    volume: 0.01
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: BossTheme
+    clip: {fileID: 8300000, guid: 714f7fdadda141a46917a4a6faea59f0, type: 3}
+    volume: 0.01
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: ExplosionGranada
+    clip: {fileID: 8300000, guid: 03ad61ce74df7654795b24bfe4247063, type: 3}
+    volume: 0.1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: ExplosionFlash
+    clip: {fileID: 8300000, guid: 36b48da506661934db7336e943cf8209, type: 3}
+    volume: 0.1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}

@@ -25,7 +25,7 @@ public class DefautlWeapon : Weapon
             if (Input.GetMouseButtonDown(0) && Time.time >= nextFireTime && !reloading)
             {
                 InstanceShoot();
-                //FindObjectOfType<AudioManager>().Play("Disparo");
+                FindObjectOfType<AudioManager>().Play("Disparo");
                 gameObject.GetComponent<Weapon>().disparo();
                 LessBullet();
 
@@ -44,7 +44,7 @@ public class DefautlWeapon : Weapon
 
         if (Input.GetKeyDown("r") && Time.time >= nextReload && Actualbullets != 0)
         {
-            //FindObjectOfType<AudioManager>().Play("Recargar");
+            FindObjectOfType<AudioManager>().Play("Recargar");
             StartCoroutine(Reload());
         }
 

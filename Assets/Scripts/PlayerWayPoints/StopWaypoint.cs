@@ -79,6 +79,7 @@ public class StopWaypoint : MonoBehaviour
 
         }
 
+
     }
 
     private void Stop()
@@ -112,4 +113,5 @@ public class StopWaypoint : MonoBehaviour
         SceneManager.LoadScene("FinalScene");
         //TODO mensaje de end y fade out
     }
+
 }

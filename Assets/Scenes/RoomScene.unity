@@ -36164,6 +36164,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4218946168670328, guid: 8ac6c8f32a8b3114f8c36c2815f09d4f, type: 3}
   m_PrefabInstance: {fileID: 1509672199}
   m_PrefabAsset: {fileID: 0}
+--- !u!198 &1514217990 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 6026108304316172679, guid: fc0b934fd15f0a3a5a750dbce6116ea6, type: 3}
+  m_PrefabInstance: {fileID: 1774509187}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1515605696
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -42701,9 +42706,17 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 999092593, guid: fc0b934fd15f0a3a5a750dbce6116ea6, type: 3}
+      propertyPath: visionRange
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 999092593, guid: fc0b934fd15f0a3a5a750dbce6116ea6, type: 3}
       propertyPath: stopWaypoint
       value: 
       objectReference: {fileID: 1425797172}
+    - target: {fileID: 2042895348, guid: fc0b934fd15f0a3a5a750dbce6116ea6, type: 3}
+      propertyPath: drone
+      value: 
+      objectReference: {fileID: 967024413}
     - target: {fileID: 2042895348, guid: fc0b934fd15f0a3a5a750dbce6116ea6, type: 3}
       propertyPath: shootPoint
       value: 
@@ -42712,6 +42725,10 @@ PrefabInstance:
       propertyPath: shootSpeed
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2042895348, guid: fc0b934fd15f0a3a5a750dbce6116ea6, type: 3}
+      propertyPath: particulaTiro
+      value: 
+      objectReference: {fileID: 1514217990}
     - target: {fileID: 4996263699086873125, guid: fc0b934fd15f0a3a5a750dbce6116ea6, type: 3}
       propertyPath: m_Name
       value: PA_Drone Variant 1

@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class StopWaypoint : MonoBehaviour
 {
     [SerializeField]CinemachineDollyCart player;
+    [SerializeField] Scene2Controller sceneController;
     public MoveGunWithMouse moveCam;
     public GameObject[] lights;
     public GameObject playerLight;
@@ -62,19 +63,19 @@ public class StopWaypoint : MonoBehaviour
 
         if (other.tag == "ExitToBoss")
         {
-            ChangeSceneToBoss();
+            StartCoroutine(ChangeSceneToBoss());
 
         }
 
         if (other.tag == "ExitToRoom")
         {
-            ChangeSceneToRoom();
+            StartCoroutine(ChangeSceneToRoom());
 
         }
 
         if (other.tag == "End")
         {
-            End();
+            StartCoroutine(End());
 
         }
 
@@ -88,20 +89,27 @@ public class StopWaypoint : MonoBehaviour
 
     }
 
-    private void ChangeSceneToBoss()
+    private IEnumerator ChangeSceneToBoss()
     {
+        sceneController.FadeIn();
+        yield return new WaitForSeconds(1);
         //TODO fade out/in
         SceneManager.LoadScene("BossScene");
     }
 
-    private void ChangeSceneToRoom()
+    private IEnumerator ChangeSceneToRoom()
     {
+        sceneController.FadeIn();
+        yield return new WaitForSeconds(1);
         //TODO fade out/in
         SceneManager.LoadScene("RoomScene");
     }
 
-    private void End()
+    private IEnumerator End()
     {
+        sceneController.FadeIn();
+        yield return new WaitForSeconds(1);
+        SceneManager.LoadScene("FinalScene");
         //TODO mensaje de end y fade out
     }
 }

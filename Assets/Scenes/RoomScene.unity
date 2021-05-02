@@ -23813,7 +23813,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 999092593, guid: fc0b934fd15f0a3a5a750dbce6116ea6, type: 3}
   m_PrefabInstance: {fileID: 1774509187}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1639984676}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8ee852eefb561a2499fcdb2462b74a27, type: 3}
@@ -39300,6 +39300,72 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 3.0001001, y: 0.125, z: 3.0001001}
   m_Center: {x: 1.5, y: -0.0625, z: 1.5000501}
+--- !u!1 &1634749269
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1634749270}
+  m_Layer: 0
+  m_Name: EnemyEyes
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1634749270
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1634749269}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.045, y: 0, z: -4.003}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1639984678}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1639984676 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4996263699086873125, guid: fc0b934fd15f0a3a5a750dbce6116ea6, type: 3}
+  m_PrefabInstance: {fileID: 1774509187}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1639984678 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4996263699087298053, guid: fc0b934fd15f0a3a5a750dbce6116ea6, type: 3}
+  m_PrefabInstance: {fileID: 1774509187}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1639984679
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1639984676}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efc398064eecc8a47b28d9dc3c41d997, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponName: Main Wepon
+  reloadSpeed: 1
+  capacityCharger: 99
+  shootSpeed: 1
+  shootPoint: {fileID: 1425797175}
+  reloading: 0
+  bullet: {fileID: 5015922739120436824, guid: af381d65bb06f1447b67ccbdf607addc, type: 3}
+  actualbullets: 99
+  isAvailable: 0
+  particulaTiro: {fileID: 2056158822}
+  disparar: 1
+  enemyEyes: {fileID: 1634749270}
+  visionRange: 10
+  player: {fileID: 1425797175}
 --- !u!1001 &1641012738
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -42788,6 +42854,10 @@ PrefabInstance:
     - target: {fileID: 4996263699087298053, guid: fc0b934fd15f0a3a5a750dbce6116ea6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4996263699087298055, guid: fc0b934fd15f0a3a5a750dbce6116ea6, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.061
       objectReference: {fileID: 0}
     - target: {fileID: 4996263699087298055, guid: fc0b934fd15f0a3a5a750dbce6116ea6, type: 3}
       propertyPath: m_LocalPosition.z
@@ -50829,6 +50899,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8301ea8c6c341e44c9cd35fb6f2e1428, type: 3}
+--- !u!198 &2056158822 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 6026108304316172679, guid: fc0b934fd15f0a3a5a750dbce6116ea6, type: 3}
+  m_PrefabInstance: {fileID: 1774509187}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2056564907
 PrefabInstance:
   m_ObjectHideFlags: 0

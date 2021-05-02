@@ -14,6 +14,7 @@ public class StopWaypoint : MonoBehaviour
     public GameObject light3;
     public int aux;
     public int[] numEnemies;
+    public bool enMovimiento;
     
     private void Start()
     {
@@ -23,19 +24,32 @@ public class StopWaypoint : MonoBehaviour
     private void Update()
     {
         
-        if (numEnemies[aux] <= 0)
+        if (numEnemies[aux] <= 0 && Input.GetKey("space") == false)
         {
-           
+
+
             moveCam.enabled = false;
-            StartCoroutine(move());
             player.enabled = true;
 
+
+        }
+
+        if (player.enabled == true)
+        {
+            enMovimiento = true;
+        }
+        else
+        {
+            enMovimiento = false;
         }
     }
 
     public IEnumerator move()
     {
         yield return new WaitForSeconds(2f);
+        moveCam.enabled = false;
+        player.enabled = true;
+        
 
     }
 

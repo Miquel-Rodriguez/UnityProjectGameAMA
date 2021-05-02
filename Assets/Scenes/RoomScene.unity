@@ -7104,7 +7104,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 65033202795395774, guid: 48747a2f9069f384597b1a434690ae2d, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 48747a2f9069f384597b1a434690ae2d, type: 3}
 --- !u!1001 &350684604
 PrefabInstance:
@@ -17841,7 +17842,7 @@ PrefabInstance:
       objectReference: {fileID: 1425797175}
     - target: {fileID: 2777257628491300806, guid: 2d47a9f1ebcc87240b1a36ea740063cd, type: 3}
       propertyPath: visionRange
-      value: 22
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 2777257628491300806, guid: 2d47a9f1ebcc87240b1a36ea740063cd, type: 3}
       propertyPath: stopWaypoint
@@ -22268,7 +22269,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4445029852578898, guid: 5c63759061fbf4e40a5d66743b0d9fa0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.67
+      value: -0.93
       objectReference: {fileID: 0}
     - target: {fileID: 4445029852578898, guid: 5c63759061fbf4e40a5d66743b0d9fa0, type: 3}
       propertyPath: m_LocalPosition.y
@@ -24625,7 +24626,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 65033202795395774, guid: 48747a2f9069f384597b1a434690ae2d, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 48747a2f9069f384597b1a434690ae2d, type: 3}
 --- !u!1001 &995041906
 PrefabInstance:
@@ -42778,6 +42780,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -4.319
       objectReference: {fileID: 0}
+    - target: {fileID: 6026108304316172679, guid: fc0b934fd15f0a3a5a750dbce6116ea6, type: 3}
+      propertyPath: looping
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fc0b934fd15f0a3a5a750dbce6116ea6, type: 3}
 --- !u!1001 &1776611623
@@ -43841,7 +43847,7 @@ PrefabInstance:
       objectReference: {fileID: 1425797175}
     - target: {fileID: 2777257628491300806, guid: 2d47a9f1ebcc87240b1a36ea740063cd, type: 3}
       propertyPath: visionRange
-      value: 22
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 2777257628491300806, guid: 2d47a9f1ebcc87240b1a36ea740063cd, type: 3}
       propertyPath: stopWaypoint

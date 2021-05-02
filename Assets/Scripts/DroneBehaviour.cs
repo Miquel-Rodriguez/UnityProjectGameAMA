@@ -11,6 +11,8 @@ public class DroneBehaviour : MonoBehaviour
     DroneWeapon droneWeapon;
     public StopWaypoint stopWaypoint;
     public bool dead = false;
+    RaycastHit hit;
+    public float visionRange;
 
     void Start()
     {
@@ -29,6 +31,7 @@ public class DroneBehaviour : MonoBehaviour
         {
             gameObject.SetActive(false);
         }
+
        
     }
 

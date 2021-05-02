@@ -17,9 +17,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Weapon defaultWeapon;
     [SerializeField] private Weapon secondWeapon;
 
-
-    [SerializeField]private EnemySoldier[] enemySoldiers;
-
     private bool dead;
     public bool unavez = true;
     private Vector3 vector1;

@@ -60,6 +60,8 @@ public class StopWaypoint : MonoBehaviour
             light2.SetActive(true);
             light3.SetActive(true);
 
+            other.enabled = false;
+
         }
 
         if (other.tag == "ExitToBoss")

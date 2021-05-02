@@ -17785,7 +17785,7 @@ PrefabInstance:
       objectReference: {fileID: 1425797175}
     - target: {fileID: 2777257628491300806, guid: 2d47a9f1ebcc87240b1a36ea740063cd, type: 3}
       propertyPath: visionRange
-      value: 15
+      value: 22
       objectReference: {fileID: 0}
     - target: {fileID: 2777257628491300806, guid: 2d47a9f1ebcc87240b1a36ea740063cd, type: 3}
       propertyPath: stopWaypoint
@@ -43592,7 +43592,7 @@ PrefabInstance:
       objectReference: {fileID: 1425797175}
     - target: {fileID: 2777257628491300806, guid: 2d47a9f1ebcc87240b1a36ea740063cd, type: 3}
       propertyPath: visionRange
-      value: 15
+      value: 22
       objectReference: {fileID: 0}
     - target: {fileID: 2777257628491300806, guid: 2d47a9f1ebcc87240b1a36ea740063cd, type: 3}
       propertyPath: stopWaypoint

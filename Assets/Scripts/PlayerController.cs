@@ -16,6 +16,7 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] private Weapon defaultWeapon;
     [SerializeField] private Weapon secondWeapon;
+    [SerializeField] StopWaypoint stopWaypoint;
 
     private bool dead;
     public bool unavez = true;
@@ -43,7 +44,7 @@ public class PlayerController : MonoBehaviour
     
     void Update()
     {
-        if (!dead)
+        if (!dead && stopWaypoint.enMovimiento == false)
         {
             if (Input.GetKey("space"))
             {

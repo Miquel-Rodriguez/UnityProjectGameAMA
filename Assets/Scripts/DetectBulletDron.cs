@@ -2,26 +2,25 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DetectBulletSoldier : MonoBehaviour
+public class DetectBulletDron : MonoBehaviour
 {
-
-    [SerializeField] EnemySoldier enemySoldierScript;
+    // Start is called before the first frame update
     [SerializeField] int damage = 15;
+    public DroneBehaviour drone;
     private void Start()
     {
-       
+
     }
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Bullet"))
         {
-            if (enemySoldierScript.life >= 0)
+            if (drone.life >= 0)
             {
-                enemySoldierScript.Lesslife(damage);
+                drone.LesslifeDrone(damage);
             }
-           
+
         }
     }
-
 
 }

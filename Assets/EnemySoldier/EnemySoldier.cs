@@ -43,7 +43,7 @@ public class EnemySoldier : MonoBehaviour
 
     bool shooting = false;
 
-    [SerializeField] int life = 100;
+    public int life = 100;
 
 
     [SerializeField] private float offsetvalor=0.5f;
@@ -70,6 +70,7 @@ public class EnemySoldier : MonoBehaviour
         if (!deadth)
         {
             print(flashed);
+            print(WatchingPlayer());
 
             if (runing)
             {
@@ -136,7 +137,7 @@ public class EnemySoldier : MonoBehaviour
     {
         vengoDeAbajo = true;
         weaponScript.disparar = false;
-        enemyEyes.position = transform.position+new Vector3(0,1,0);
+        enemyEyes.position = transform.position+new Vector3(0,enemyEyes.position.y-0.1f,0);
         animator.SetBool("NormalShooting", false);
         animator.SetBool("Down", true);
         waitToUp = Random.Range(minTimewaitToUp, maxTimeWaitToUp);
@@ -144,7 +145,7 @@ public class EnemySoldier : MonoBehaviour
         waitToDown = Time.time + Random.Range(minTimewaitwaitToDown, maxTimeWaitwaitToDown);
         animator.SetBool("Down", false);
         down = false;
-        enemyEyes.position = transform.position + new Vector3(0, 1.75f, 0);
+        enemyEyes.position = transform.position + new Vector3(0, 1.2f, 0);
        
     }
 
@@ -198,6 +199,8 @@ public class EnemySoldier : MonoBehaviour
             InstantiateLoot ins = GetComponent<InstantiateLoot>();
             ins.InsantieteLoots();
             stopWaypoint.numEnemies[stopWaypoint.aux] -= 1;
+            
+            
         }
     }
 
@@ -227,7 +230,7 @@ public class EnemySoldier : MonoBehaviour
 
     private IEnumerator Desflashear()
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(6f);
         weaponScript.flashed = false;
         flashed = false;
     }

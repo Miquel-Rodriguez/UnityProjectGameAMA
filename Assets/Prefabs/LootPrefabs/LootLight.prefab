@@ -111,7 +111,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09477ba5bee395f4e9e7d99a29b5313a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lootName: Lifht grenade
+  lootName: Light grenade
 --- !u!1 &1725504642299335413
 GameObject:
   m_ObjectHideFlags: 0

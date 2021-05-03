@@ -57,6 +57,7 @@ public class Scene2Controller : MonoBehaviour
 
         }
         panel.SetActive(estadoStopMenu);
+        Cursor.visible = estadoStopMenu;
         if (estadoStopMenu)
         {
             Time.timeScale = 0f;

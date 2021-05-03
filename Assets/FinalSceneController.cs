@@ -1,9 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class InitialSceneController : MonoBehaviour
+public class FinalSceneController : MonoBehaviour
 {
 
     private bool start = false;
@@ -13,29 +14,43 @@ public class InitialSceneController : MonoBehaviour
 
     private GameObject panel;
 
+    [SerializeField] RawImage textImage1;
+    [SerializeField] RawImage textImage2;
+    [SerializeField] RawImage textImage3;
+
+
     private void Start()
     {
-        panel = GameObject.Find("HowPlayPanel").gameObject;
-        CerrarHowPlay();
+
+
+        textImage2.enabled = false;
+        textImage3.enabled = false;
+        StartCoroutine(ElFinal());
         StartCoroutine(GrowDawn());
-        Cursor.visible = true;
-    }
-    public void QuitGame()
-    {
-        Application.Quit();
-    }
-    public void SceneSwitcher(int numscene)
-    {
-        StartCoroutine(Switch(numscene));
     }
 
-    private IEnumerator Switch(int numscene)
+    private IEnumerator ElFinal()
     {
+        yield return new WaitForSeconds(4.5f);
         FadeIn();
-        yield return new WaitForSeconds(fadeTime + 1.5f);
-        SceneManager.LoadScene(1);
+        yield return new WaitForSeconds(1f);
+        textImage1.enabled = false;
+        textImage2.enabled = true;
         FadeOut();
+        yield return new WaitForSeconds(4.5f);
+        FadeIn();
+        yield return new WaitForSeconds(1f);
+        textImage2.enabled = false;
+        textImage3.enabled = true;
+        FadeOut();
+        yield return new WaitForSeconds(6.5f);
+        FadeIn();
+        yield return new WaitForSeconds(1f);
+
+        SceneManager.LoadScene(0);
+
     }
+
 
     private IEnumerator GrowDawn()
     {
@@ -45,6 +60,9 @@ public class InitialSceneController : MonoBehaviour
         fadeTime = 0.5f;
         FadeOut();
     }
+
+
+
 
     private void OnGUI()
     {
@@ -82,18 +100,4 @@ public class InitialSceneController : MonoBehaviour
     {
         isFadeIn = false;
     }
-
-
-
-
-    public void CerrarHowPlay()
-    {
-        panel.SetActive(false);
-    }
-
-    public void AbrirHowPlay()
-    {
-        panel.SetActive(true);
-    }
-
 }

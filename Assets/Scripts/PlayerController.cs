@@ -39,6 +39,7 @@ public class PlayerController : MonoBehaviour
     {
         actualLife = life;
         healthBar.SetMaxHealth(life);
+        Cursor.visible = false;
     }
 
     

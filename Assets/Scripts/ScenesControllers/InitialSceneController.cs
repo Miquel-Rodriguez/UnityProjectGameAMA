@@ -18,6 +18,7 @@ public class InitialSceneController : MonoBehaviour
         panel = GameObject.Find("HowPlayPanel").gameObject;
         CerrarHowPlay();
         StartCoroutine(GrowDawn());
+        Cursor.visible = true;
     }
     public void QuitGame()
     {

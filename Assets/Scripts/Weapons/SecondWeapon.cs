@@ -24,6 +24,7 @@ public class SecondWeapon : Weapon
             if (Input.GetMouseButton(0) && Time.time >= nextFireTime && !reloading)
             {
                 InstanceShoot();
+                FindObjectOfType<AudioManager>().Play("Disparo");
                 LessBullet();
 
             }
